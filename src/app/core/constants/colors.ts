@@ -30,3 +30,5 @@ export const COLORS: IColor[] = [
     code: '#6d28d9',
   },
 ];
+
+export const BASE_CODE = COLORS[0].code;

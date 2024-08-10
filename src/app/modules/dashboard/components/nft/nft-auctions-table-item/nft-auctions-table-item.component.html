@@ -8,7 +8,7 @@
   </div>
 </td>
 <td class="py-2 pl-2 text-right">
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.instant_price }} ETH</span>
+  <span class="text-sm font-semibold text-muted-foreground">{{ auction.current_price }} USD</span>
 </td>
 <td class="py-2 pl-2 text-right">
   <span class="text-sm font-semibold text-muted-foreground">{{ auction.price | currency }}</span>
@@ -17,7 +17,7 @@
   <!-- <div class="ml-4 flex items-center justify-start">
 		<img [src]="auction.avatar" class="mr-3 h-8 w-8 rounded-b-md" alt="" />
 	</div> -->
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.last_bid }} ETH</span>
+  <span class="text-sm font-semibold text-muted-foreground">{{ auction.last_price }} USD</span>
 </td>
 <td class="py-2 pl-2 text-right">
   <span class="text-sm font-semibold text-muted-foreground">{{ auction.ending_in }}</span>
