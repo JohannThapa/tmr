@@ -1,0 +1,27 @@
+<div class="relative ml-3">
+  <label
+    for="toggleThree"
+    [ngClass]="currentMode === 'dark' ? 'bg-gradient-to-r from-gray-100 ' : 'bg-gradient-to-l from-gray-500 to-white'"
+    class="flex rounded-full items-center cursor-pointer select-none text-dark dark:text-white">
+    <div class="relative">
+      <input
+        type="checkbox"
+        id="toggleThree"
+        class="peer sr-only"
+        (change)="toggleThemeMode()"
+        [checked]="currentMode === 'dark'" />
+      <div class="block h-8 rounded-full bg-gray-3 dark:bg-dark-2 w-14"></div>
+      <div
+        class="absolute flex items-center justify-center w-6 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-full"
+        [ngClass]="currentMode === 'dark' ? 'bg-black text-white' : 'bg-white text-black'">
+        <svg-icon
+          class="h-6 w-6"
+          [src]="
+            currentMode === 'light' ? 'assets/icons/heroicons/solid/sun.svg' : 'assets/icons/heroicons/solid/moon.svg'
+          "
+          [svgClass]="currentMode === 'light' ? 'text-dark' : 'text-white'">
+        </svg-icon>
+      </div>
+    </div>
+  </label>
+</div>

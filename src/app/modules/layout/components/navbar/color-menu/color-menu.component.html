@@ -1,0 +1,35 @@
+<div class="relative ml-3">
+  <!-- Color Button -->
+  <button (click)="toggleMenu()" class="relative flex rounded-full text-sm" type="button">
+    <span class="sr-only">Open color menu</span>
+      <span
+      clickOutside
+      (clickOutside)="isOpen = false"
+      [style.backgroundColor]="mainColor"
+      [style.color]="mainColor | bgtxt"
+      class="mr-1 flex h-8 w-8 rounded-full shrink-0 -translate-x-1 items-center justify-center bg-rose-500">{{label}}</span>
+  </button>
+  <!-- Dropdown -->
+  <div
+    [@openClose]="isOpen ? 'open' : 'closed'"
+    class="absolute right-0 z-20 mt-2 w-60 origin-top-right transform rounded-md bg-background pb-2 shadow-custom ring-1 ring-transparent ring-opacity-5 transition focus:outline-none">
+    <div class="mx-4 my-2">
+      <span class="text-xs font-semibold text-foreground">Chose colors:</span>
+      <hr class="border-dashed border-border" />
+      <div class="mt-2 grid grid-cols-2 gap-2">
+        @for (item of themeColors; track $index) {
+        <div
+          :key="$index"
+          (click)="toggleThemeColor(item.name)"
+          [ngClass]="{ 'border-muted-foreground bg-card': item.name == themeService.theme().color }"
+          class="focus-visible:ring-ring inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border border-border bg-background px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-card hover:text-foreground">
+          <span
+            [style.backgroundColor]="item.code"
+            class="mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-rose-500"></span>
+          <p class="capitalize">{{ item.name }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="flex h-screen w-full overflow-hidden">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <div class="flex grow flex-col content-start overflow-hidden bg-card">
+    <!-- Header -->
+    <app-navbar></app-navbar>
+    <!-- main content -->
+    <div
+      id="main-content"
+      class="scrollbar-thumb-rounded scrollbar-track-rounded grow overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted">
+      <div class="mx-auto px-4 py-4 sm:px-8 lg:container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+
+    <!-- Bottom bar -->
+    <!-- <app-bottom-navbar></app-bottom-navbar> -->
+  </div>
+</div>
