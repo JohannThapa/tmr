@@ -3,7 +3,7 @@ import { IColor } from '../models/color.model';
 export const COLORS: IColor[] = [
   {
     name: 'base',
-    code: '#e11d48',
+    code: '#732626',
   },
   {
     name: 'yellow',
@@ -20,6 +20,10 @@ export const COLORS: IColor[] = [
   {
     name: 'orange',
     code: '#ea580c',
+  },
+  {
+    name: 'pink',
+    code: '#e37383',
   },
   {
     name: 'red',

@@ -11,6 +11,7 @@ export class Menu {
           label: 'Dashboard',
           route: '/dashboard',
           children: [
+            { label: 'Index', route: '/dashboard/index' },
             { label: 'Bidding', route: '/dashboard/bids' },
           ],
         },

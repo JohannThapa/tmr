@@ -1,1 +1,22 @@
-<p>index works!</p>
+<!-- <div>
+  <app-idx-header></app-idx-header>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+    <div text-a1 text="Hi, I'm Johann" [highlightIndex]="4" fontSize="text-[70px]" class="md:col-span-2"></div>
+    <div idx-bubble-card image="./assets/images/rupak.png"></div>
+  </div>
+</div> -->
+
+<app-bg-a1>
+  <!-- Header and other content -->
+  <app-idx-header></app-idx-header>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 relative z-10">
+    <!-- Dual Card -->
+    <div text-a1 text="Hi, I'm Johann" [highlightIndex]="4" fontSize="text-[70px]" class="md:col-span-2"></div>
+
+    <!-- Single Card -->
+    <div idx-bubble-card image="./assets/images/rupak.png"></div>
+
+    <!-- Other content -->
+  </div>
+</app-bg-a1>
