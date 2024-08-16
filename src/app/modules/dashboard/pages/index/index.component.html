@@ -1,22 +1,32 @@
-<!-- <div>
-  <app-idx-header></app-idx-header>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-    <div text-a1 text="Hi, I'm Johann" [highlightIndex]="4" fontSize="text-[70px]" class="md:col-span-2"></div>
-    <div idx-bubble-card image="./assets/images/rupak.png"></div>
-  </div>
-</div> -->
-
-<app-bg-a1>
+<div bg-a1 class="p-12">
   <!-- Header and other content -->
   <app-idx-header></app-idx-header>
 
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 relative z-10">
-    <!-- Dual Card -->
-    <div text-a1 text="Hi, I'm Johann" [highlightIndex]="4" fontSize="text-[70px]" class="md:col-span-2"></div>
-
-    <!-- Single Card -->
+    <!-- 2 col Card -->
+    <div class="md:col-span-2">
+      <div class="grid grid-rows-3 grid-flow-col gap-4">
+        <div class="col-span-2">
+          <div text-a1 text="Hi, I'm Johann" [highlightIndex]="6" fontSize="text-[70px]" class="text-center"></div>
+        </div>
+        <div class="row-span-2 col-span-2">
+          <div
+            text-a2
+            [stacks]="['Angular', 'React', 'NextJs', 'Flutter', 'NodeJs', 'NestJs', 'ExpressJs', 'Asp.net']"
+            [skills]="[
+              'Full-stack Developer',
+              'Web Developer',
+              'UI/UX Designer',
+              'Desktop/Mobile Developer',
+              'E2E/Unit Tester'
+            ]"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Single col Card -->
+    <div></div>
     <div idx-bubble-card image="./assets/images/rupak.png"></div>
 
     <!-- Other content -->
   </div>
-</app-bg-a1>
+</div>

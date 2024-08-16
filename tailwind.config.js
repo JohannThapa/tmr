@@ -92,6 +92,17 @@ module.exports = {
           '50%': { transform: 'translateX(50%) translateY(10%)' },
           '100%': { transform: 'translateX(-50%) translateY(-10%)' },
         },
+        // text-a2
+        show: {
+          '0%': { marginTop: '-270px' },
+          '5%': { marginTop: '-180px' },
+          '33%': { marginTop: '-180px' },
+          '38%': { marginTop: '-90px' },
+          '66%': { marginTop: '-90px' },
+          '71%': { marginTop: '0px' },
+          '99.99%': { marginTop: '0px' },
+          '100%': { marginTop: '-270px' },
+        },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -99,12 +110,13 @@ module.exports = {
         bounceSlow: 'bounce-1 1.5s cubic-bezier(0.1, -0.6, 0.2, 0) infinite',
         morphing: 'morphing 10s infinite',
         moveInCircle: 'moveInCircle 20s reverse infinite',
-        moveVertical: 'moveVertical 40s ease infinite',
+        moveVertical: 'mov  eVertical 40s ease infinite',
         moveHorizontal: 'moveHorizontal 40s ease infinite',
         'fade-in-down': 'fade-in-down 0.3s ease-out',
         'fade-out-down': 'fade-out-down 0.3s ease-out',
         'fade-in-up': 'fade-in-up 0.3s ease-out',
         'fade-out-up': 'fade-out-up 0.3s ease-out',
+        show: 'show 10s linear infinite', // text-a2
       },
       boxShadow: {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',

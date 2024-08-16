@@ -5,11 +5,12 @@
   <div class="flex grow flex-col content-start overflow-hidden bg-card">
     <!-- Header -->
     <app-navbar></app-navbar>
-    <!-- main content -->
+    <!-- main content [option: container and container-fluid]-->
+     <!-- TODO: Make api configuration for layout width -->
     <div
       id="main-content"
       class="scrollbar-thumb-rounded scrollbar-track-rounded grow overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted">
-      <div class="mx-auto px-4 py-4 sm:px-8 lg:container">
+      <div class="mx-auto px-4 py-4 md:p-0 lg:container-fluid">
         <router-outlet></router-outlet>
       </div>
     </div>
