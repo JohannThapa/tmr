@@ -103,6 +103,31 @@ module.exports = {
           '99.99%': { marginTop: '0px' },
           '100%': { marginTop: '-270px' },
         },
+        // button-a1
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '5%': { transform: 'rotate(18deg)' },
+          '10%': { transform: 'rotate(36deg)' },
+          '15%': { transform: 'rotate(54deg)' },
+          '20%': { transform: 'rotate(72deg)' },
+          '25%': { transform: 'rotate(90deg)' },
+          '30%': { transform: 'rotate(108deg)' },
+          '35%': { transform: 'rotate(126deg)' },
+          '40%': { transform: 'rotate(144deg)' },
+          '45%': { transform: 'rotate(162deg)' },
+          '50%': { transform: 'rotate(180deg)' },
+          '55%': { transform: 'rotate(198deg)' },
+          '60%': { transform: 'rotate(216deg)' },
+          '65%': { transform: 'rotate(234deg)' },
+          '70%': { transform: 'rotate(252deg)' },
+          '75%': { transform: 'rotate(270deg)' },
+          '80%': { transform: 'rotate(288deg)' },
+          '85%': { transform: 'rotate(306deg)' },
+          '90%': { transform: 'rotate(324deg)' },
+          '95%': { transform: 'rotate(342deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        }
+
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -116,7 +141,8 @@ module.exports = {
         'fade-out-down': 'fade-out-down 0.3s ease-out',
         'fade-in-up': 'fade-in-up 0.3s ease-out',
         'fade-out-up': 'fade-out-up 0.3s ease-out',
-        show: 'show 10s linear infinite', // text-a2
+        show: 'show 6s linear infinite', // text-a2
+        'btn-a1': 'rotate 5s linear infinite', // button-a1
       },
       boxShadow: {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',

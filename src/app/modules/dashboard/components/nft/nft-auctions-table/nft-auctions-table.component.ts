@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Nft } from '../../../models/nft';
 import { NftAuctionsTableItemComponent } from '../nft-auctions-table-item/nft-auctions-table-item.component';
 import { NgFor } from '@angular/common';
 
 @Component({
-    selector: '[nft-auctions-table]',
-    templateUrl: './nft-auctions-table.component.html',
-    standalone: true,
-    imports: [NgFor, NftAuctionsTableItemComponent],
+  selector: '[tmr-crypto-auctions-table]',
+  templateUrl: './nft-auctions-table.component.html',
+  standalone: true,
+  imports: [NgFor, NftAuctionsTableItemComponent],
 })
-export class NftAuctionsTableComponent implements OnInit {
+export class NftAuctionsTableComponent {
   public activeAuction: Nft[] = [];
 
   constructor() {
@@ -76,6 +76,4 @@ export class NftAuctionsTableComponent implements OnInit {
       },
     ];
   }
-
-  ngOnInit(): void {}
 }

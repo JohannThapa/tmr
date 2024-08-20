@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Nft } from '../../models/nft';
 import { NftAuctionsTableComponent } from '../../components/nft/nft-auctions-table/nft-auctions-table.component';
 import { NftChartCardComponent } from '../../components/nft/nft-chart-card/nft-chart-card.component';
@@ -7,18 +7,18 @@ import { NftDualCardComponent } from '../../components/nft/nft-dual-card/nft-dua
 import { NftHeaderComponent } from '../../components/nft/nft-header/nft-header.component';
 
 @Component({
-    selector: 'app-nft',
-    templateUrl: './nft.component.html',
-    standalone: true,
-    imports: [
-        NftHeaderComponent,
-        NftDualCardComponent,
-        NftSingleCardComponent,
-        NftChartCardComponent,
-        NftAuctionsTableComponent,
-    ],
+  selector: 'app-crypto',
+  templateUrl: './nft.component.html',
+  standalone: true,
+  imports: [
+    NftHeaderComponent,
+    NftDualCardComponent,
+    NftSingleCardComponent,
+    NftChartCardComponent,
+    NftAuctionsTableComponent,
+  ],
 })
-export class NftComponent implements OnInit {
+export class NftComponent {
   nft: Array<Nft>;
 
   constructor() {
@@ -53,6 +53,4 @@ export class NftComponent implements OnInit {
       },
     ];
   }
-
-  ngOnInit(): void {}
 }

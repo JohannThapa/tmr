@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { ClickOutsideDirective } from '../../../../../shared/directives/click-outside.directive';
@@ -36,24 +36,21 @@ import { COLORS } from 'src/app/core/constants/colors';
     ]),
   ],
 })
-export class ProfileMenuComponent implements OnInit {
+export class ProfileMenuComponent {
   public isOpen = false;
   public profileMenu = [
     {
       title: 'Settings',
       icon: './assets/icons/heroicons/outline/cog-6-tooth.svg',
       link: '/settings',
-    }
+    },
   ];
-
 
   public themeColors = COLORS;
 
   public themeMode = ['light', 'dark'];
 
   constructor(public themeService: ThemeService) {}
-
-  ngOnInit(): void {}
 
   public toggleMenu(): void {
     this.isOpen = !this.isOpen;
@@ -66,9 +63,11 @@ export class ProfileMenuComponent implements OnInit {
     });
   }
 
-  toggleThemeColor(color: string) {
-    this.themeService.theme.update((theme) => {
-      return { ...theme, color: color };
-    });
+  toggleThemeColor(color: string | null) {
+    if(color){
+      this.themeService.theme.update((theme) => {
+        return { ...theme, color: color };
+      });
+    }
   }
 }

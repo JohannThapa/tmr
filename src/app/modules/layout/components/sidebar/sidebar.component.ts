@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import packageJson from '../../../../../../package.json';
 import { MenuService } from '../../services/menu.service';
 import { RouterLink } from '@angular/router';
@@ -13,12 +13,10 @@ import { NgClass, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgClass, NgIf, AngularSvgIconModule, SidebarMenuComponent, RouterLink],
 })
-export class SidebarComponent implements OnInit {
-  public appJson: any = packageJson;
+export class SidebarComponent {
+  public appJson = packageJson;
 
   constructor(public menuService: MenuService) {}
-
-  ngOnInit(): void {}
 
   public toggleSidebar() {
     this.menuService.toggleSidebar();

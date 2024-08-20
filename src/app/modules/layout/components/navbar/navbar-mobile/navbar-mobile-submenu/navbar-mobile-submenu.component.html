@@ -3,7 +3,11 @@
   [ngClass]="{ 'max-h-screen': submenu.expanded }">
   <ul class="flex flex-col border-l border-dashed border-border pl-2 text-muted-foreground">
     <li *ngFor="let sub of submenu.children">
-      <div class="flex rounded hover:bg-card hover:text-foreground" (click)="toggleMenu(sub)">
+      <div
+        class="flex rounded hover:bg-card hover:text-foreground"
+        tabindex="0"
+        (click)="toggleMenu(sub)"
+        (keydown.space)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"

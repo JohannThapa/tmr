@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './noise-card.component.html',
-  styleUrl: './noise-card.component.scss'
+  styleUrl: './noise-card.component.scss',
 })
-export class NoiseCardComponent {
-
-}
+export class NoiseCardComponent {}

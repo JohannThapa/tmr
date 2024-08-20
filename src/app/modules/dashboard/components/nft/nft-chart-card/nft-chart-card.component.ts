@@ -1,21 +1,20 @@
-import { Component, OnDestroy, OnInit, effect } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, effect } from '@angular/core';
 import { ThemeService } from 'src/app/core/services/theme.service';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: '[nft-chart-card]',
+  selector: '[tmr-crypto-chart-card]',
   templateUrl: './nft-chart-card.component.html',
   standalone: true,
   imports: [AngularSvgIconModule, NgApexchartsModule],
 })
-export class NftChartCardComponent implements OnInit, OnDestroy {
+export class NftChartCardComponent {
   public chartOptions: Partial<ChartOptions>;
 
   constructor(private themeService: ThemeService) {
-    let baseColor = '#FFFFFF';
+    const baseColor = '#FFFFFF';
     const data = [2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3000, 3000, 3250, 3250];
     const categories = [
       '10AM',
@@ -136,8 +135,4 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
     };
     return `#${f(0)}${f(8)}${f(4)}`;
   }
-
-  ngOnInit(): void {}
-
-  ngOnDestroy(): void {}
 }

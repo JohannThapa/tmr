@@ -8,9 +8,8 @@ describe('NoiseCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NoiseCardComponent]
-    })
-    .compileComponents();
+      imports: [NoiseCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NoiseCardComponent);
     component = fixture.componentInstance;

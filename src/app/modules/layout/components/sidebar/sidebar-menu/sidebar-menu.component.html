@@ -8,7 +8,11 @@
     <!-- List items -->
     <li *ngFor="let item of menu.items">
       <!-- Menu List -->
-      <div (click)="toggleMenu(item)" class="group relative text-muted-foreground">
+      <div
+        (click)="toggleMenu(item)"
+        tabindex="0"
+        (keyup.space)="toggleMenu(item)"
+        class="group relative text-muted-foreground">
         <!-- Icon -->
         <div
           [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'"

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ThemeService } from 'src/app/core/services/theme.service';
@@ -10,7 +10,7 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   templateUrl: './toggle-menu.component.html',
   styleUrls: ['./toggle-menu.component.scss'],
 })
-export class ToggleMenuComponent {
+export class ToggleMenuComponent implements OnInit {
   public currentMode: string;
 
   constructor(public themeService: ThemeService) {

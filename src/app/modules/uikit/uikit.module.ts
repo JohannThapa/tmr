@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { UikitRoutingModule } from './uikit-routing.module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    UikitRoutingModule
-  ]
+  imports: [CommonModule, UikitRoutingModule],
 })
-export class UikitModule { }
+export class UikitModule {}

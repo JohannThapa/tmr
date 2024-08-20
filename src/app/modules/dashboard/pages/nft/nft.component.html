@@ -1,22 +1,22 @@
 <div class="p-12">
   <!-- Header -->
-  <app-nft-header></app-nft-header>
+  <tmr-crypto-header></tmr-crypto-header>
   <!-- end Header -->
 
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
     <!-- Dual Card -->
-    <div nft-dual-card [nft]="nft[0]" class="md:col-span-2"></div>
+    <div tmr-crypto-dual-card [nft]="nft[0]" class="md:col-span-2"></div>
     <!-- end Dual Card -->
     <!-- Single Card -->
-    <div nft-single-card [nft]="nft[1]"></div>
+    <div tmr-crypto-single-card [nft]="nft[1]"></div>
     <!-- end Single Card -->
     <!-- Single Card -->
-    <div nft-single-card [nft]="nft[2]"></div>
+    <div tmr-crypto-single-card [nft]="nft[2]"></div>
     <!-- end Single Card -->
     <!-- Single Card -->
-    <div nft-chart-card class="md:col-span-2 xl:col-span-1"></div>
+    <div tmr-crypto-chart-card class="md:col-span-2 xl:col-span-1"></div>
     <!-- end Single Card -->
     <!-- Auctions Table -->
-    <div nft-auctions-table class="md:col-span-2 xl:col-span-3"></div>
+    <div tmr-crypto-auctions-table class="md:col-span-2 xl:col-span-3"></div>
   </div>
 </div>

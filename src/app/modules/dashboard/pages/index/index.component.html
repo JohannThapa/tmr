@@ -1,32 +1,49 @@
-<div bg-a1 class="p-12">
-  <!-- Header and other content -->
+<div tmr-bg-a1 class="p-12">
+  <!-- Header -->
   <app-idx-header></app-idx-header>
 
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 relative z-10">
-    <!-- 2 col Card -->
-    <div class="md:col-span-2">
-      <div class="grid grid-rows-3 grid-flow-col gap-4">
-        <div class="col-span-2">
-          <div text-a1 text="Hi, I'm Johann" [highlightIndex]="6" fontSize="text-[70px]" class="text-center"></div>
+  <div class="grid grid-cols-1 lg:grid-cols-8 pt-12 lg:pt-24 gap-2 relative z-10">
+    <div class="col-start-2 col-span-6">
+      <div class="flex flex-col-reverse lg:flex-row">
+        <div class="lg:basis-grow">
+          <!-- Introduction -->
+          <div class="flex justify-center items-center">
+            <div class="grid grid-rows-3 grid-flow-col">
+              <div class="col-span-2">
+                <div
+                  tmr-text-a1
+                  text="Hi, I'm Johann,"
+                  [highlightIndex]="7"
+                  fontSize="text-4xl md:text-5xl lg:text-[70px]"
+                  class="text-center"></div>
+              </div>
+              <div class="row-span-2 col-span-2">
+                <div
+                  tmr-text-a2
+                  [stacks]="techStacks"
+                  [skills]="skillSet"
+                  class="text-base md:text-lg lg:text-xl"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row-span-2 col-span-2">
-          <div
-            text-a2
-            [stacks]="['Angular', 'React', 'NextJs', 'Flutter', 'NodeJs', 'NestJs', 'ExpressJs', 'Asp.net']"
-            [skills]="[
-              'Full-stack Developer',
-              'Web Developer',
-              'UI/UX Designer',
-              'Desktop/Mobile Developer',
-              'E2E/Unit Tester'
-            ]"></div>
+        <!-- Image Card -->
+        <div
+          tmr-bubble-card
+          [width]="300"
+          [height]="300"
+          customClass="flex-none w-full h-[300px] md:h-[400px] lg:w-[300px]">
+          <tmr-custom-img
+            src="./assets/images/rupak.png"
+            alt="Sample Image"
+            [width]="600"
+            [height]="400"
+            [fill]="false"
+            [priority]="true"
+            loading="eager"
+            customClass="custom-image-class"></tmr-custom-img>
         </div>
       </div>
     </div>
-    <!-- Single col Card -->
-    <div></div>
-    <div idx-bubble-card image="./assets/images/rupak.png"></div>
-
-    <!-- Other content -->
   </div>
 </div>
