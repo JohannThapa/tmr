@@ -12,7 +12,7 @@
         [checked]="currentMode === 'dark'" />
       <div class="block h-8 rounded-full bg-gray-3 dark:bg-dark-2 w-14"></div>
       <div
-        class="absolute flex items-center justify-center w-6 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-full"
+        class="absolute flex items-center justify-center w-6 h-6 transition rounded-full dot left-1 top-1 peer-checked:translate-x-full"
         [ngClass]="currentMode === 'dark' ? 'bg-black text-white' : 'bg-white text-black'">
         <svg-icon
           class="h-6 w-6"
@@ -22,6 +22,17 @@
           [svgClass]="currentMode === 'light' ? 'text-dark' : 'text-white'">
         </svg-icon>
       </div>
+      <!-- <div
+        class="absolute flex items-center justify-center w-6 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-full"
+        [ngClass]="currentMode === 'dark' ? 'bg-black text-white' : 'bg-white text-black'">
+        <svg-icon
+          class="h-6 w-6"
+          [src]="
+            currentMode === 'light' ? 'assets/icons/heroicons/solid/sun.svg' : 'assets/icons/heroicons/solid/moon.svg'
+          "
+          [svgClass]="currentMode === 'light' ? 'text-dark' : 'text-white'">
+        </svg-icon>
+      </div> -->
     </div>
   </label>
 </div>

@@ -47,6 +47,9 @@ importers:
       apexcharts:
         specifier: ^3.35.3
         version: 3.52.0
+      chart.js:
+        specifier: ^4.4.4
+        version: 4.4.4
       ng-apexcharts:
         specifier: ^1.7.1
         version: 1.11.0(@angular/common@18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0))(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(apexcharts@3.52.0)(rxjs@7.4.0)
@@ -1257,6 +1260,9 @@ packages:
     peerDependencies:
       tslib: '2'
 
+  '@kurkle/color@0.3.2':
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
+
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
@@ -2141,6 +2147,10 @@ packages:
 
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
+
+  chart.js@4.4.4:
+    resolution: {integrity: sha512-emICKGBABnxhMjUjlYRR12PmOXhJ2eJjEHL2/dZlWjxRAZT1D8xplLFq5M0tMQK8ja+wBS/tuVEJB5C6r7VxJA==}
+    engines: {pnpm: '>=8'}
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -6386,6 +6396,8 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
+  '@kurkle/color@0.3.2': {}
+
   '@leichtgewicht/ip-codec@2.0.5': {}
 
   '@listr2/prompt-adapter-inquirer@2.0.13(@inquirer/prompts@5.0.7)':
@@ -7319,6 +7331,10 @@ snapshots:
     optional: true
 
   chardet@0.7.0: {}
+
+  chart.js@4.4.4:
+    dependencies:
+      '@kurkle/color': 0.3.2
 
   chokidar@3.6.0:
     dependencies:

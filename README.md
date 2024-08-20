@@ -1,6 +1,6 @@
-# Simple Angular Dashboard
+# TMR Portfolio
 
-Simple Angular application made from Angular 18 framework with TailwindCSS
+Dynamic Angular user portfolio with real-time weather and crypto data. Built with Tailwind CSS & chart.js for speed and style.
 
 ## Installation
 

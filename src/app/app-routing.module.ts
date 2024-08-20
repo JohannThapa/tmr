@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/layout/layout.module').then((m) => m.LayoutModule),
   },
   {
+    path: 'weather',
+    loadChildren: () => import('./modules/weather/weather.module').then((m) => m.WeatherModule),
+  },
+  {
     path: 'errors',
     loadChildren: () => import('./modules/error/error.module').then((m) => m.ErrorModule),
   },
