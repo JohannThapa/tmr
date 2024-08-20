@@ -64,7 +64,7 @@ export class ProfileMenuComponent {
   }
 
   toggleThemeColor(color: string | null) {
-    if(color){
+    if (color) {
       this.themeService.theme.update((theme) => {
         return { ...theme, color: color };
       });

@@ -25,10 +25,19 @@ export class Menu {
           ],
         },
         {
+          icon: 'assets/icons/heroicons/outline/expand.svg',
+          label: 'Full Page',
+          route: '/weather',
+          children: [{ label: 'Address', route: '/weather/address' }],
+        },
+        {
           icon: 'assets/icons/heroicons/outline/cube.svg',
           label: 'Components',
           route: '/components',
-          children: [{ label: 'Table', route: '/components/table' }],
+          children: [
+            { label: 'Table', route: '/components/table' },
+            { label: 'Address', route: '/components/weather' },
+          ],
         },
       ],
     },

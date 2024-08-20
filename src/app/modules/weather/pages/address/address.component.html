@@ -1,0 +1,101 @@
+<div [ngClass]="weatherData ? 'h-full' : 'h-screen'" class="flex w-full flex-col sm:flex-row">
+  <div class="flex flex-1 items-center justify-center bg-background">
+    <div class="max-w-md overflow-y-auto px-4 sm:w-[500px] w-full">
+      <form class="my-10 space-y-6" [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+        <div class="text-center">
+          <h2 class="mb-1 text-3xl font-semibold text-foreground">Address <span class="text-primary">*</span></h2>
+          <p class="text-sm text-muted-foreground">Let's get weather data with address</p>
+        </div>
+
+        <div
+          class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
+          <p class="mx-4 mb-0 text-center text-sm text-muted-foreground">Form</p>
+        </div>
+
+        <div class="space-y-3 text-left">
+          <div class="relative">
+            <input type="text" id="address" formControlName="address" class="peer block" placeholder=" " />
+            <label
+              [ngClass]="isModalVisible ? '' : 'absolute'"
+              for="address"
+              class="top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
+              Address
+            </label>
+          </div>
+
+          <div class="flex justify-between space-x-2" *ngIf="latitude && longitude">
+            <div class="w-full">
+              <div class="relative">
+                <input type="text" id="lat" class="peer block" placeholder=" " [value]="latitude" disabled />
+                <label
+                  for="lat"
+                  [ngClass]="isModalVisible ? '' : 'absolute'"
+                  class="top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
+                  Latitude
+                </label>
+              </div>
+            </div>
+            <div class="w-full">
+              <div class="relative">
+                <input type="text" id="long" class="peer block" placeholder=" " [value]="longitude" disabled />
+                <label
+                  for="long"
+                  [ngClass]="isModalVisible ? '' : 'absolute'"
+                  class="top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
+                  Longitude
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <app-button
+            id="submit"
+            full
+            impact="bold"
+            tone="primary"
+            shape="rounded"
+            size="medium"
+            [disabled]="addressForm.invalid">
+            <svg-icon
+              *ngIf="isSubmitting"
+              src="assets/icons/heroicons/outline/arrow-circle.svg"
+              [svgClass]="'h-4 animate-spin w-4 mr-2'">
+            </svg-icon>
+            Submit
+          </app-button>
+        </div>
+        <div (click)="downloadJSON()" (keyup.enter)="downloadJSON()" tabindex="0" *ngIf="weatherData">
+          <app-button full impact="bold" tone="light" shape="rounded" size="medium">
+            <svg-icon src="assets/icons/heroicons/solid/download.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
+            Download JSON
+          </app-button>
+        </div>
+        <div (click)="openModal()" (keyup.enter)="openModal()" tabindex="1" *ngIf="weatherData">
+          <app-button full impact="bold" tone="light" shape="rounded" size="medium">
+            <svg-icon src="assets/icons/heroicons/solid/column.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
+            Open charts
+          </app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="flex-1">
+    <app-code *ngIf="weatherData" [codes]="weatherData" language="json"></app-code>
+    <div
+      *ngIf="!weatherData"
+      class="auth-bg hidden flex-1 items-center h-full justify-center bg-primary bg-cover lg:flex">
+      <div class="max-w-2xl space-y-4 p-8 text-center text-white">
+        <svg-icon src="./assets/icons/map.svg" [svgClass]="'h-auto max-w-2xl text-primary'"> </svg-icon>
+        <h1 class="text-4xl font-bold">"Weather data in JSON"</h1>
+        <p class="text-xs font-light"></p>
+        <p class="text-gray-100">No weather data available.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-weather-modal
+  [weatherData]="weatherData"
+  [isVisible]="isModalVisible"
+  (closeModalEvent)="closeModal()"></app-weather-modal>

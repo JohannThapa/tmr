@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cx } from '../../utils/ckassnames';
 
@@ -18,6 +18,8 @@ type ButtonProps = {
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent implements OnInit {
+  @Input() disabled: boolean = false;
+  @Input() buttonId: string = '';
   impact = input<ButtonProps['impact']>('none');
   size = input<ButtonProps['size']>('medium');
   shape = input<ButtonProps['shape']>('rounded');

@@ -1,0 +1,23 @@
+<div class="rounded-lg shadow p-4 max-w-sm mx-auto" *ngIf="weatherData">
+  <div class="text-center">
+    <div class="text-2xl text-primary font-bold">{{ weatherData.main?.temp }} °C</div>
+    <div class="text-gray-500" *ngIf="weatherData.weather && weatherData.weather.length > 0">
+      {{ weatherData.weather[0].description }}
+    </div>
+  </div>
+  <div class="flex justify-between my-4">
+    <div class="text-center">
+      <div class="text-lg font-semibold text-primary">{{ weatherData.main?.humidity }} %</div>
+      <div class="text-gray-500">Humidity</div>
+    </div>
+    <div class="text-center">
+      <div class="text-lg font-semibold text-primary">{{ weatherData.main?.pressure }} hPa</div>
+      <div class="text-gray-500">Pressure</div>
+    </div>
+    <div class="text-center">
+      <div class="text-lg font-semibold text-primary">{{ weatherData.wind?.speed }} m/s</div>
+      <div class="text-gray-500">Wind</div>
+    </div>
+  </div>
+  <canvas id="lineChart" width="400" height="400" #lineChart></canvas>
+</div>
