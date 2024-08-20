@@ -9,10 +9,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   styleUrl: './table-header.component.scss',
 })
 export class TableHeaderComponent {
-  @Output() onCheck = new EventEmitter<boolean>();
-
+  @Output() selectAll = new EventEmitter<boolean>();
   public toggle(event: Event) {
     const value = (event.target as HTMLInputElement).checked;
-    this.onCheck.emit(value);
+    this.selectAll.emit(value);
   }
 }

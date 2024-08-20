@@ -8,9 +8,8 @@ describe('IdxHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IdxHeaderComponent]
-    })
-    .compileComponents();
+      imports: [IdxHeaderComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(IdxHeaderComponent);
     component = fixture.componentInstance;

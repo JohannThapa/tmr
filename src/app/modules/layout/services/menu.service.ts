@@ -17,7 +17,7 @@ export class MenuService implements OnDestroy {
     /** Set dynamic menu */
     this._pagesMenu.set(Menu.pages);
 
-    let sub = this.router.events.subscribe((event) => {
+    const sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         /** Expand menu base on active route */
         this._pagesMenu().forEach((menu) => {
@@ -59,7 +59,7 @@ export class MenuService implements OnDestroy {
     this._showSidebar.set(!this._showSidebar());
   }
 
-  public toggleMenu(menu: any) {
+  public toggleMenu(menu: SubMenuItem) {
     this.showSideBar = true;
     menu.expanded = !menu.expanded;
   }
@@ -68,14 +68,14 @@ export class MenuService implements OnDestroy {
     submenu.expanded = !submenu.expanded;
   }
 
-  private expand(items: Array<any>) {
+  private expand(items: Array<SubMenuItem>) {
     items.forEach((item) => {
       item.expanded = this.isActive(item.route);
       if (item.children) this.expand(item.children);
     });
   }
 
-  private isActive(instruction: any): boolean {
+  private isActive(instruction: string | null | undefined): boolean {
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',
       queryParams: 'subset',

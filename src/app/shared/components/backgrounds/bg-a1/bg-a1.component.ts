@@ -1,15 +1,12 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
-import { TextA1Component } from '../../texts/text-a1/text-a1.component';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
-  selector: '[bg-a1]',
+  selector: '[tmr-bg-a1]',
   standalone: true,
   imports: [],
   template: `
     <div class="absolute inset-0 overflow-hidden bg-card z-0">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="absolute inset-0 w-full h-full opacity-30 mix-blend-soft-light">
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full opacity-30 mix-blend-soft-light">
         <filter id="noiseFilterBg">
           <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
         </filter>
@@ -25,17 +22,11 @@ import { TextA1Component } from '../../texts/text-a1/text-a1.component';
       </div>
     </div>
     <ng-content></ng-content>
-
-
   `,
   styleUrl: './bg-a1.component.scss',
 })
 export class BgA1Component implements AfterViewInit {
-
-  constructor(){
-
-  }
-
+  constructor() {}
 
   ngAfterViewInit(): void {
     const interBubble = document.querySelector('.interactive') as HTMLElement;

@@ -8,9 +8,8 @@ describe('TableHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableHeaderComponent]
-    })
-    .compileComponents();
+      imports: [TableHeaderComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TableHeaderComponent);
     component = fixture.componentInstance;

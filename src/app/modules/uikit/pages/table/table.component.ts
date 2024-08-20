@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, signal } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component, signal } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { User } from './model/user.model';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +23,7 @@ import { toast } from 'ngx-sonner';
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   users = signal<User[]>([]);
 
   constructor(private http: HttpClient) {
@@ -33,15 +33,16 @@ export class TableComponent implements OnInit {
     });
   }
 
-  public toggleUsers(checked: boolean) {
-    this.users.update((users) => {
+  public toggleUsers(e: Event) {
+    const checked = (e?.target as HTMLInputElement)?.checked ?? false;
+    -this.users.update((users) => {
       return users.map((user) => {
         return { ...user, selected: checked };
       });
     });
   }
 
-  private handleRequestError(error: any) {
+  private handleRequestError(error: HttpErrorResponse) {
     const msg = 'An error occurred while fetching users';
     toast.error(msg, {
       position: 'bottom-right',
@@ -53,6 +54,4 @@ export class TableComponent implements OnInit {
       actionButtonStyle: 'background-color:#DC2626; color:white;',
     });
   }
-
-  ngOnInit() {}
 }

@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: '[text-a1]',
+  selector: '[tmr-text-a1]',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -16,18 +16,24 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [],
 })
-export class TextA1Component {
+export class TextA1Component implements OnInit {
   @Input() text: string = '';
   @Input() highlightIndex: number = -1;
   @Input() fontSize: string = 'text-base';
 
-  generateClass(index: number): string {
-    const baseClasses = `inline-block hover:cursor-pointer text-foreground text-shadow-a1-primary font-matemasie font-semibold ${this.fontSize}`;
+  private baseClasses: string = '';
 
+  ngOnInit() {
+    this.baseClasses = `inline-block hover:cursor-pointer text-foreground text-shadow-a1-primary font-matemasie font-semibold ${this.fontSize}`;
+  }
+
+  generateClass(index: number): string {
     if (index === this.highlightIndex) {
-      return `${baseClasses} hover:animate-wiggle text-primary text-shadow-text-a1`;
+      return `${this.baseClasses} hover:animate-wiggle text-primary text-shadow-text-a1`;
     }
 
-    return index % 2 === 0 ? `${baseClasses} hover:animate-bounceSlow` : `${baseClasses} hover:animate-bounce`;
+    return index % 2 === 0
+      ? `${this.baseClasses} hover:animate-bounceSlow`
+      : `${this.baseClasses} hover:animate-bounce`;
   }
 }

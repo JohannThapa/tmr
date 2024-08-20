@@ -2,12 +2,14 @@
   <!-- Color Button -->
   <button (click)="toggleMenu()" class="relative flex rounded-full text-sm" type="button">
     <span class="sr-only">Open color menu</span>
-      <span
-      clickOutside
+    <span
+      tmr-click-outside
       (clickOutside)="isOpen = false"
       [style.backgroundColor]="mainColor"
       [style.color]="mainColor | bgtxt"
-      class="mr-1 flex h-8 w-8 rounded-full shrink-0 -translate-x-1 items-center justify-center bg-rose-500">{{label}}</span>
+      class="mr-1 flex h-8 w-8 rounded-full shrink-0 -translate-x-1 items-center justify-center bg-rose-500"
+      >{{ label }}</span
+    >
   </button>
   <!-- Dropdown -->
   <div
@@ -21,7 +23,9 @@
         <div
           :key="$index"
           (click)="toggleThemeColor(item.name)"
-          [ngClass]="{ 'border-muted-foreground bg-card': item.name == themeService.theme().color }"
+          (keyup.enter)="toggleThemeColor(item.name)"
+          tabindex="0"
+          [ngClass]="{ 'border-muted-foreground bg-card': item.name === themeService.theme().color }"
           class="focus-visible:ring-ring inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border border-border bg-background px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-card hover:text-foreground">
           <span
             [style.backgroundColor]="item.code"
