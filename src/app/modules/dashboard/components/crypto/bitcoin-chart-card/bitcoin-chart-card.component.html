@@ -71,7 +71,12 @@
           </span>
         </td>
         <td class="py-2 text-right">
-          <span class="text-sm font-semibold text-foreground" *ngIf="transaction.change" [ngClass]="transaction.change <= 0 ? 'text-rose-600' : 'text-green-500'">{{ transaction.change | number : '1.2-2' }}%</span>
+          <span
+            class="text-sm font-semibold text-foreground"
+            *ngIf="transaction.change"
+            [ngClass]="transaction.change <= 0 ? 'text-rose-600' : 'text-green-500'"
+            >{{ transaction.change | number : '1.2-2' }}%</span
+          >
         </td>
       </tr>
     </tbody>

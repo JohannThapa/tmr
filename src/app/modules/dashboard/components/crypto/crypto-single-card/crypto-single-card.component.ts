@@ -32,13 +32,12 @@ export class CryptoSingleCardComponent {
   }
 
   constructor() {
-    console.log(this.cryptoData)
+    console.log(this.cryptoData);
   }
 
-   formatPrice(price: string): string {
+  formatPrice(price: string): string {
     const parsedPrice = parseFloat(price);
     const decimalPart = Math.round(parsedPrice * 100) / 100;
     return decimalPart.toFixed(2) + ' USD';
   }
-
 }

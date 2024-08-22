@@ -1,4 +1,4 @@
-export interface IBitcoinChart{
+export interface IBitcoinChart {
   values?: number[];
-  prices?: number[]
+  prices?: number[];
 }

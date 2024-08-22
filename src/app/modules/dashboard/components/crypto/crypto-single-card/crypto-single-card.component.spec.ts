@@ -8,9 +8,8 @@ describe('CryptoSingleCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CryptoSingleCardComponent]
-    })
-    .compileComponents();
+      imports: [CryptoSingleCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CryptoSingleCardComponent);
     component = fixture.componentInstance;

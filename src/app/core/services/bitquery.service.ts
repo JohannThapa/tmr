@@ -29,7 +29,7 @@ export class BitqueryService {
     limit: number,
     offset: number,
     from?: string,
-    till?: string
+    till?: string,
   ): Observable<any[]> {
     const { from: defaultFrom, till: defaultTill } = this.getCurrentDateRange();
     const queryFrom = from || defaultFrom;
@@ -81,7 +81,7 @@ export class BitqueryService {
         },
       })
       .valueChanges.pipe(
-        map(({data}) => data.bitcoin),
+        map(({ data }) => data.bitcoin),
         catchError((error) => {
           console.error('Error fetching average Bitcoin transaction fee', error);
           return of({});

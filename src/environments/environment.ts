@@ -8,8 +8,8 @@ export const environment = {
   openWeatherApiKey: '57709a878ef02e9a42dfe436ffbd775c',
   bitQueryApiKey: {
     v1: 'BQYbLXheunwqJyuwy4So58bOheO2CGYW',
-    v2: ''
-  }
+    v2: '',
+  },
 };
 
 /*

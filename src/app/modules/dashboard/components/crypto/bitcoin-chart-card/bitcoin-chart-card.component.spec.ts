@@ -8,9 +8,8 @@ describe('BitcoinChartCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BitcoinChartCardComponent]
-    })
-    .compileComponents();
+      imports: [BitcoinChartCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BitcoinChartCardComponent);
     component = fixture.componentInstance;

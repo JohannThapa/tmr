@@ -1,4 +1,4 @@
-import { AugmentedBlockchainData } from "src/app/core/models/blockchain";
+import { AugmentedBlockchainData } from 'src/app/core/models/blockchain';
 
 export const Fake: AugmentedBlockchainData = {
   bitcoin: {

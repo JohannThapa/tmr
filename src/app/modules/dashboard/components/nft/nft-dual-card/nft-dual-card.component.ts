@@ -16,10 +16,9 @@ export class NftDualCardComponent {
   @Input() title: string = 'Average Bitcoin Transaction Fee';
 
   get transactions() {
-    if(this.avg.transactions.length == 0) return []
+    if (this.avg.transactions.length == 0) return [];
     return this.avg.transactions;
   }
 
-  constructor() {
-  }
+  constructor() {}
 }

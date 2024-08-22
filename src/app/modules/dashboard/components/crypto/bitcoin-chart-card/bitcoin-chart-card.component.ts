@@ -21,10 +21,7 @@ export class BitcoinChartCardComponent implements OnInit {
   public transactions: any[] = [];
   public formattedTransactions: { time: string; amount: number; change: number }[] = [];
 
-  constructor(
-    private themeService: ThemeService,
-    private bitcoinService: BitqueryService,
-  ) {}
+  constructor(private themeService: ThemeService, private bitcoinService: BitqueryService) {}
 
   ngOnInit(): void {
     this.fetchBitcoinTransactions();

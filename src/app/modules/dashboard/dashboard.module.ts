@@ -8,6 +8,6 @@ import { BitqueryService } from 'src/app/core/services/bitquery.service';
 
 @NgModule({
   imports: [DashboardRoutingModule, AngularSvgIconModule.forRoot()],
-  providers: [provideHttpClient(withInterceptorsFromDi()), BitqueryService,  ...graphqlProvider],
+  providers: [provideHttpClient(withInterceptorsFromDi()), BitqueryService, ...graphqlProvider],
 })
 export class DashboardModule {}

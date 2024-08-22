@@ -1,1 +1,1 @@
-export type CryptoType =  'bitcoin' | 'solana' | 'ethereum';
+export type CryptoType = 'bitcoin' | 'solana' | 'ethereum';

@@ -34,7 +34,7 @@ import { IAvgFeeBitcoin } from '../../models/crypto';
 })
 export class NftComponent implements OnInit, OnDestroy {
   cryptoData$!: Observable<AugmentedBlockchainData>;
-  cryptoTypes: Array<CryptoType> = [ 'solana', 'ethereum'];
+  cryptoTypes: Array<CryptoType> = ['solana', 'ethereum'];
 
   private destroy$ = new Subject<void>();
 
