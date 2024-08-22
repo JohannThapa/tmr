@@ -4,26 +4,26 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
 import { ThemeService } from 'src/app/core/services/theme.service';
-import { CommonModule, CurrencyPipe, NgFor } from '@angular/common';
+import { CommonModule, CurrencyPipe, NgClass, NgFor } from '@angular/common';
 import { BitqueryService } from 'src/app/core/services/bitquery.service';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: '[tmr-bitcoin-chart-card]',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule, NgApexchartsModule, NgFor, CurrencyPipe],
+  imports: [CommonModule, AngularSvgIconModule, NgApexchartsModule, NgFor, CurrencyPipe, NgClass],
   templateUrl: './bitcoin-chart-card.component.html',
   styleUrl: './bitcoin-chart-card.component.scss',
 })
 export class BitcoinChartCardComponent implements OnInit {
   transactions$!: Observable<any[]>;
   public chartOptions!: Partial<ChartOptions>;
-  public transactions: any[] = []; // Store transactions
+  public transactions: any[] = [];
   public formattedTransactions: { time: string; amount: number; change: number }[] = [];
 
   constructor(
     private themeService: ThemeService,
-    private bitcoinService: BitqueryService, // Inject the service
+    private bitcoinService: BitqueryService,
   ) {}
 
   ngOnInit(): void {
@@ -129,34 +129,32 @@ export class BitcoinChartCardComponent implements OnInit {
   }
   private calculateChange(index: number): number {
     if (index === 0 || this.transactions.length < 2) {
-      return 0; // No change for the first transaction or if there's not enough data
+      return 0;
     }
 
     const previousTransaction = this.transactions[index - 1];
     const currentTransaction = this.transactions[index];
 
     if (!previousTransaction.input_value_usd || !currentTransaction.input_value_usd) {
-      return 0; // Handle cases where value might be missing
+      return 0;
     }
 
     const previousValue = previousTransaction.input_value_usd;
     const currentValue = currentTransaction.input_value_usd;
 
-    return ((currentValue - previousValue) / previousValue) * 100; // Rate of change percentage
+    return ((currentValue - previousValue) / previousValue) * 100;
   }
 
   calculatePercentageChange(): number {
     if (this.transactions.length < 2) {
-      return 0; // Not enough data to calculate change
+      return 0;
     }
 
-    // Ensure amounts are available and are numbers
     const initialAmount = this.transactions[0].input_value_usd;
     const latestAmount = this.transactions[this.transactions.length - 1].input_value_usd;
 
-    // Check for valid amounts
     if (initialAmount == null || latestAmount == null || initialAmount === 0) {
-      return 0; // Avoid division by zero and handle null values
+      return 0;
     }
 
     return ((latestAmount - initialAmount) / initialAmount) * 100;
@@ -179,7 +177,6 @@ export class BitcoinChartCardComponent implements OnInit {
       const k = (n + h / 30) % 12;
       const color = hDecimal - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
 
-      // Convert to Hex and prefix with "0" if required
       return Math.round(255 * color)
         .toString(16)
         .padStart(2, '0');
