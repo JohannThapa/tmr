@@ -1,0 +1,83 @@
+<ng-container *ngIf="cryptoData">
+  <div
+    class="flex h-[420px] flex-col rounded-lg bg-background p-8"
+    *ngIf="cryptoType === 'bitcoin' && isBitcoin(cryptoData.bitcoin)">
+    <svg-icon
+      class="h-[240px] w-full max-h-[240px] hover:text-muted-foreground cursor-pointer text-primary rounded-md object-cover transition duration-150 ease-in-out hover:opacity-75"
+      [src]="cryptoData.bitcoin.image || ' '">
+    </svg-icon>
+    <h2 class="text-md mt-6 font-semibold text-foreground">{{ cryptoData.bitcoin.title }}</h2>
+    <div
+      class="flex items-end justify-between text-sm font-semibold text-muted-foreground"
+      *ngIf="cryptoData.bitcoin.outputs && cryptoData.bitcoin.outputs.length > 0">
+      <span> Price: {{ formatPrice(cryptoData.bitcoin.outputs[0].price || '0') }}</span>
+      <span> Quantity: {{ cryptoData.bitcoin.outputs[0].value | number : '1.2-2' }}</span>
+    </div>
+    <div
+      class="mt-6 flex items-center justify-between"
+      *ngIf="cryptoData.bitcoin.outputs && cryptoData.bitcoin.outputs.length > 0">
+      <button
+        class="lex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+        Balance:
+      </button>
+      <button
+        class="hover:bg-primary-600 flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+        {{ cryptoData.bitcoin.outputs[0].balanceInUSD | currency }}
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex h-[420px] flex-col rounded-lg bg-background p-8"
+    *ngIf="cryptoType === 'solana' && isSolana(cryptoData.solana)">
+    <svg-icon
+      class="h-[240px] w-full max-h-[240px] hover:text-muted-foreground cursor-pointer text-primary rounded-md object-cover transition duration-150 ease-in-out hover:opacity-75"
+      [src]="cryptoData.solana.image || ' '">
+    </svg-icon>
+    <h2 class="text-md mt-6 font-semibold text-foreground">{{ cryptoData.solana.title }}</h2>
+    <div
+      class="flex items-end justify-between text-sm font-semibold text-muted-foreground"
+      *ngIf="cryptoData.solana.transactions && cryptoData.solana.transactions.length > 0">
+      <span>Price: {{ formatPrice(cryptoData.solana.transactions[0].price || '0') }}</span>
+      <span>Quantity: {{ cryptoData.solana.transactions[0].amount | number : '1.2-2' }}</span>
+    </div>
+    <div
+      class="mt-6 flex items-center justify-between"
+      *ngIf="cryptoData.solana.transactions && cryptoData.solana.transactions.length > 0">
+      <button
+        class="lex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+        Amount:
+      </button>
+      <button
+        class="hover:bg-primary-600 flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+        {{ cryptoData.solana.transactions[0].amountInUSD | currency }}
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex h-[420px] flex-col rounded-lg bg-background p-8"
+    *ngIf="cryptoType === 'ethereum' && isEthereum(cryptoData.ethereum)">
+    <svg-icon
+      class="h-[240px] w-full max-h-[240px] hover:text-muted-foreground cursor-pointer text-primary rounded-md object-cover transition duration-150 ease-in-out hover:opacity-75"
+      [src]="cryptoData.ethereum.image || ' '">
+    </svg-icon>
+    <h2 class="text-md mt-6 font-semibold text-foreground">{{ cryptoData.ethereum.title }}</h2>
+    <div
+      class="flex items-end justify-between text-sm font-semibold text-muted-foreground"
+      *ngIf="cryptoData.ethereum.transactions && cryptoData.ethereum.transactions.length > 0">
+      Price: {{ formatPrice(cryptoData.ethereum.transactions[0].price || '0') }} USD
+      <span>Quantity: {{ cryptoData.ethereum.transactions[0].quantity | number : '1.2-2' }}</span>
+    </div>
+    <div
+      class="mt-6 flex items-center justify-between"
+      *ngIf="cryptoData.ethereum.transactions && cryptoData.ethereum.transactions.length > 0">
+      <button
+        class="lex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+        Total:
+      </button>
+      <button
+        class="hover:bg-primary-600 flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+        {{ cryptoData.ethereum.transactions[0].total | currency }}
+      </button>
+    </div>
+  </div>
+</ng-container>
