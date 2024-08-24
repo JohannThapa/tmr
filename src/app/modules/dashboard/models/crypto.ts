@@ -1,10 +1,16 @@
 export interface ICrypto {
   image?: string;
   title?: string;
-  price?: number;
   volume?: number;
+  name?: string;
+  shortName?: string;
+  price?: number;
+  change1d?: number;
   marketCap?: number;
+  volume24h?: number;
+  circulatingSupply?: number;
 }
+
 export interface IAvgFeeBitcoin {
   transactions: IAvgFeeTransaction[];
   __typename?: string;

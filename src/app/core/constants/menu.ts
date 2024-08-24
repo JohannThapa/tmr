@@ -12,7 +12,7 @@ export class Menu {
           route: '/dashboard',
           children: [
             { label: 'Index', route: '/dashboard/index' },
-            { label: 'Bidding', route: '/dashboard/bids' },
+            { label: 'Crypto', route: '/dashboard/crypto' },
           ],
         },
         {

@@ -2,37 +2,69 @@
 import { CommonModule, CurrencyPipe, DecimalPipe, NgClass, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { AugmentedBlockchainData, IBitcoin, IEthereum, ISolana } from 'src/app/core/models/blockchain';
+import { AugmentedBlockchainData, IEthereumTransaction, ISolanaTransaction } from 'src/app/core/models/blockchain';
 import { CryptoType } from 'src/app/core/types/crypto-type';
+import { CscOutputTransactionComponent } from './csc-output-transaction.component';
+import { SingleLoaderComponent } from 'src/app/shared/loaders/cards/single-loader/single-loader.component';
+import { ISingleCardStyle } from '../../../models/single-card';
+import { CryptoEnum } from 'src/app/core/enums/crypto.enum';
 
 @Component({
   selector: '[tmr-single-card]',
   standalone: true,
-  imports: [CommonModule, NgStyle, CurrencyPipe, DecimalPipe, AngularSvgIconModule, NgClass],
+  imports: [
+    CommonModule,
+    NgStyle,
+    CurrencyPipe,
+    DecimalPipe,
+    AngularSvgIconModule,
+    NgClass,
+    CscOutputTransactionComponent,
+    SingleLoaderComponent,
+  ],
   templateUrl: './crypto-single-card.component.html',
   styleUrl: './crypto-single-card.component.scss',
 })
 export class CryptoSingleCardComponent {
   @Input() cryptoType!: CryptoType;
   @Input() cryptoData?: AugmentedBlockchainData;
-  getCryptoData(type: CryptoType) {
-    return this.cryptoData?.[type];
+  @Input() cardStyle!: ISingleCardStyle;
+  crypto = CryptoEnum;
+
+  getCryptoType(): CryptoType {
+    if (this.cryptoData?.bitcoin?.outputs) {
+      return CryptoEnum.Bitcoin;
+    } else if (this.cryptoData?.ethereum?.transactions) {
+      return CryptoEnum.Ethereum;
+    } else if (this.cryptoData?.solana?.transactions) {
+      return CryptoEnum.Solana;
+    }
+    return CryptoEnum.Ethereum;
   }
 
-  isBitcoin(data: any): data is IBitcoin {
-    return !!data?.outputs;
+  getCrypto(type: CryptoType): IEthereumTransaction | ISolanaTransaction | null {
+    const transactions =
+      type === CryptoEnum.Ethereum
+        ? this.cryptoData?.ethereum?.transactions
+        : type === CryptoEnum.Solana
+        ? this.cryptoData?.solana?.transactions
+        : undefined;
+    return transactions && transactions.length > 0 ? transactions[0] : null;
   }
 
-  isEthereum(data: any): data is IEthereum {
-    return !!data?.transactions;
-  }
+  constructor() {}
 
-  isSolana(data: any): data is ISolana {
-    return !!data?.transactions;
-  }
-
-  constructor() {
-    console.log(this.cryptoData);
+  get balanceLabel(): string {
+    switch (this.cryptoType) {
+      case CryptoEnum.Bitcoin:
+        return 'Balance:';
+      case CryptoEnum.Solana:
+        return 'Amount:';
+      case CryptoEnum.Ethereum:
+        return 'Total:';
+      default:
+        return 'Balance:';
+    }
   }
 
   formatPrice(price: string): string {

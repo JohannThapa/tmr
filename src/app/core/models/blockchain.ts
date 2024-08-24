@@ -1,9 +1,12 @@
 export interface AugmentedBlockchainData {
-  bitcoin: IBitcoin & { image?: string; title?: string };
-  solana: ISolana & { image?: string; title?: string };
-  ethereum: IEthereum & { image?: string; title?: string };
+  bitcoin: IBitcoin & ICustomCryptoAdditionalItem;
+  solana: ISolana & ICustomCryptoAdditionalItem;
+  ethereum: IEthereum & ICustomCryptoAdditionalItem;
 }
-
+export interface ICustomCryptoAdditionalItem {
+  image?: string;
+  title?: string;
+}
 export interface Iblockchain {
   data?: IBlockChainData;
 }

@@ -1,0 +1,54 @@
+<div class="p-12">
+  <!-- Header -->
+  <tmr-crypto-header></tmr-crypto-header>
+  <!-- End Header -->
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+    <!-- Dual Card -->
+    <div
+      *ngIf="averageFee$ | async as data; else dataLoading"
+      tmr-crypto-dual-card
+      [cardStyle]="dualCardData"
+      title="Average Bitcoin Transaction Fee"
+      image="./assets/icons/working.svg"
+      avatar="./assets/images/rupak.png"
+      class="md:col-span-2"
+      [avg]="data"></div>
+    <ng-template #dataLoading>
+      <div tmr-dual-card-loader [cardStyle]="dualCardData" class="md:col-span-2"></div>
+    </ng-template>
+    <!-- End Dual Card -->
+
+    <!-- Single Card -->
+    <ng-container *ngIf="cryptoData$ | async as crypto; else cryptoLoading">
+      <div
+        tmr-single-card
+        *ngFor="let type of cryptoTypes"
+        [cryptoType]="type"
+        [cardStyle]="singleCardData.style"
+        [cryptoData]="crypto"></div>
+    </ng-container>
+
+    <ng-template #cryptoLoading>
+      <div
+        tmr-single-card-loader
+        *ngFor="let type of cryptoTypes"
+        [container]="singleCardData.style.container"
+        [image]="singleCardData.style.image"></div>
+    </ng-template>
+
+    <!-- End Single Card -->
+
+    <!-- Chart Card -->
+    <div
+      [container]="singleCardData.style.container"
+      [image]="singleCardData.style.image"
+      tmr-bitcoin-chart-card
+      class="md:col-span-2 xl:col-span-1"></div>
+    <!-- end Single Card -->
+    <!-- Single Card -->
+    <!-- <div tmr-crypto-chart-card class="md:col-span-2 xl:col-span-1"></div> -->
+    <!-- end Single Card -->
+    <!-- Auctions Table -->
+    <div tmr-crypto-transaction-table class="md:col-span-2 xl:col-span-3"></div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<ng-container *ngIf="!loading; else loader">
+  <div class="flex-col rounded-lg bg-background px-8 py-8 sm:flex-row">
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex-col items-center">
+        <h3 class="text-md font-bold text-foreground">Cryptocurrency Prices</h3>
+        <span class="text-xs text-muted-foreground">Total: {{ currencies.length }} Assets</span>
+      </div>
+      <button
+        class="flex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+        Today
+      </button>
+    </div>
+
+    <div class="relative overflow-x-auto">
+      <table class="w-full table-auto">
+        <!--Table head-->
+        <thead class="text-xs uppercase text-muted-foreground">
+          <tr>
+            <th class="py-3 text-left">Name</th>
+            <th class="py-3 text-right">Price $</th>
+            <th class="py-3 text-right">Market Cap $</th>
+            <th class="py-3 text-right">Volume(1d)</th>
+            <th class="py-3 text-right">Changes(1d)</th>
+            <th class="py-3 text-right">View</th>
+          </tr>
+        </thead>
+        <!--End Table head-->
+        <!--Table body-->
+        <tbody>
+          <tr
+            *ngFor="let item of currencies"
+            [crypto]="item"
+            tmr-crypto-transaction-table-item
+            class="border-b border-dashed border-border hover:bg-card"></tr>
+        </tbody>
+        <!--End Table body-->
+      </table>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tmr-simple-table-loader></tmr-simple-table-loader>
+</ng-template>

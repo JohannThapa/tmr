@@ -1,25 +1,52 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
 import { ThemeService } from 'src/app/core/services/theme.service';
 import { CommonModule, CurrencyPipe, NgClass, NgFor } from '@angular/common';
 import { BitqueryService } from 'src/app/core/services/bitquery.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
+import { SingleLoaderComponent } from 'src/app/shared/loaders/cards/single-loader/single-loader.component';
+import { ISingleCardImage, ISize } from '../../../models/single-card';
+import { hslToHexColor } from 'src/app/shared/utils/colors';
 
 @Component({
   selector: '[tmr-bitcoin-chart-card]',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule, NgApexchartsModule, NgFor, CurrencyPipe, NgClass],
+  imports: [
+    CommonModule,
+    AngularSvgIconModule,
+    NgApexchartsModule,
+    NgFor,
+    CurrencyPipe,
+    NgClass,
+    SingleLoaderComponent,
+  ],
   templateUrl: './bitcoin-chart-card.component.html',
-  styleUrl: './bitcoin-chart-card.component.scss',
+  styleUrls: ['./bitcoin-chart-card.component.scss'],
 })
-export class BitcoinChartCardComponent implements OnInit {
+export class BitcoinChartCardComponent implements OnInit, OnDestroy {
+  @Input() container: ISize = {
+    height: '420px',
+    width: '',
+  };
+  @Input() image: ISingleCardImage = {
+    container: {
+      height: '240px',
+      width: '',
+    },
+    icon: {
+      height: '40px',
+      width: '40px',
+    },
+  };
+
   transactions$!: Observable<any[]>;
-  public chartOptions!: Partial<ChartOptions>;
-  public transactions: any[] = [];
-  public formattedTransactions: { time: string; amount: number; change: number }[] = [];
+  chartOptions!: Partial<ChartOptions>;
+  transactions: any[] = [];
+  formattedTransactions: { time: string; amount: number; change: number }[] = [];
+  private destroy$ = new Subject<void>();
 
   constructor(private themeService: ThemeService, private bitcoinService: BitqueryService) {}
 
@@ -33,97 +60,97 @@ export class BitcoinChartCardComponent implements OnInit {
     const offset = 0;
     const { from, till } = this.bitcoinService.getCurrentDateRange();
     this.transactions$ = this.bitcoinService.getBitcoinTransactions(network, limit, offset, from, till);
-    this.transactions$.subscribe((transactions) => {
+    this.transactions$.pipe(takeUntil(this.destroy$)).subscribe((transactions) => {
       this.transactions = transactions;
-      this.formattedTransactions = transactions.map((txn, index) => {
-        const { block, input_value_usd } = txn;
-        return {
-          time: block.timestamp.time,
-          amount: input_value_usd,
-          change: this.calculateChange(index),
-        };
-      });
-      const data = this.formattedTransactions.map((tx) => tx.amount);
-      const categories = this.formattedTransactions.map((tx) => tx.time);
+      this.formatData();
+    });
+  }
 
-      this.chartOptions = {
-        series: [
-          {
-            name: 'Bitcoin',
-            data: data,
-          },
-        ],
-        chart: {
-          fontFamily: 'inherit',
-          type: 'area',
-          height: 150,
-          toolbar: {
-            show: false,
-          },
-          sparkline: {
-            enabled: true,
-          },
+  private formatData(): void {
+    this.formattedTransactions = this.transactions.map((txn, index) => {
+      const { block, input_value_usd } = txn;
+      return {
+        time: block.timestamp.time,
+        amount: input_value_usd,
+        change: this.calculateChange(index),
+      };
+    });
+
+    const data = this.formattedTransactions.map((tx) => tx.amount);
+    const categories = this.formattedTransactions.map((tx) => tx.time);
+    this.chartOptions = {
+      series: [
+        {
+          name: 'Bitcoin',
+          data: data,
         },
-        dataLabels: {
-          enabled: false,
+      ],
+      chart: {
+        fontFamily: 'inherit',
+        type: 'area',
+        height: 150,
+        toolbar: {
+          show: false,
         },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.4,
-            opacityTo: 0.2,
-            stops: [15, 120, 100],
-          },
+        sparkline: {
+          enabled: true,
         },
-        stroke: {
-          curve: 'smooth',
-          show: true,
-          width: 3,
-          colors: [this.getPrimaryColor()], // Updated color
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.4,
+          opacityTo: 0.2,
+          stops: [15, 120, 100],
         },
-        xaxis: {
-          categories: categories,
-          labels: {
-            show: false,
-          },
-          crosshairs: {
-            position: 'front',
-            stroke: {
-              color: this.getPrimaryColor(),
-              width: 1,
-              dashArray: 4,
-            },
-          },
-          tooltip: {
-            enabled: true,
+      },
+      stroke: {
+        curve: 'smooth',
+        show: true,
+        width: 3,
+        colors: [this.getPrimaryColor()],
+      },
+      xaxis: {
+        categories: categories,
+        labels: {
+          show: false,
+        },
+        crosshairs: {
+          position: 'front',
+          stroke: {
+            color: this.getPrimaryColor(),
+            width: 1,
+            dashArray: 4,
           },
         },
         tooltip: {
-          theme: this.themeService.theme().mode,
-          y: {
-            formatter: function (val) {
-              return val + ' BTC';
-            },
-          },
+          enabled: true,
         },
-        colors: [this.getPrimaryColor()],
-      };
-    });
+      },
+      tooltip: {
+        theme: this.themeService.theme().mode,
+        y: {
+          formatter: (val) => `${val} BTC`,
+        },
+      },
+      colors: [this.getPrimaryColor()],
+    };
   }
-  formatTimestamp(timestamp: string): string {
-    const date = new Date(timestamp);
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-  }
+
   public formatTimeOnly(timestamp: string): string {
     const date = new Date(timestamp);
     return date.toLocaleTimeString();
   }
 
   public getPrimaryColor(): string {
-    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
-    return this.HSLToHex(primaryColor);
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+    return hslToHexColor(primaryColor);
   }
+
   private calculateChange(index: number): number {
     if (index === 0 || this.transactions.length < 2) {
       return 0;
@@ -142,7 +169,7 @@ export class BitcoinChartCardComponent implements OnInit {
     return ((currentValue - previousValue) / previousValue) * 100;
   }
 
-  calculatePercentageChange(): number {
+  public calculatePercentageChange(): number {
     if (this.transactions.length < 2) {
       return 0;
     }
@@ -156,31 +183,6 @@ export class BitcoinChartCardComponent implements OnInit {
 
     return ((latestAmount - initialAmount) / initialAmount) * 100;
   }
-
-  private HSLToHex(color: string): string {
-    const colorArray = color.split('%').join('').split(' ');
-    const colorHSL = colorArray.map(Number);
-    const hsl = {
-      h: colorHSL[0],
-      s: colorHSL[1],
-      l: colorHSL[2],
-    };
-
-    const { h, s, l } = hsl;
-
-    const hDecimal = l / 100;
-    const a = (s * Math.min(hDecimal, 1 - hDecimal)) / 100;
-    const f = (n: number) => {
-      const k = (n + h / 30) % 12;
-      const color = hDecimal - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-
-      return Math.round(255 * color)
-        .toString(16)
-        .padStart(2, '0');
-    };
-    return `#${f(0)}${f(8)}${f(4)}`;
-  }
-
   public formatAmount(amount: number): string {
     if (amount >= 1e9) {
       return (amount / 1e9).toFixed(2) + 'b';
@@ -191,5 +193,9 @@ export class BitcoinChartCardComponent implements OnInit {
     } else {
       return amount.toFixed(2);
     }
+  }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
