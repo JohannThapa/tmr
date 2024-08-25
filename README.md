@@ -5,7 +5,7 @@ Dynamic Angular user portfolio with real-time weather and crypto data. Built wit
 ![version](https://img.shields.io/badge/version-0.2.beta-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg)![Angular](https://img.shields.io/badge/angular-18.1.4-red) ![Tailwind](https://img.shields.io/badge/tailwind-latest-blue) ![GraphQL](https://img.shields.io/badge/graphQL-16-blue')
  <a href="https://www.linkedin.com/in/rupak-thapa-magar-703468296/" target="_blank">![Chat](https://img.shields.io/badge/chat-on%20linkedin-7289da.svg)</a>
 
-![Index Page]()
+![intro](https://github.com/user-attachments/assets/12e998e2-9b41-475a-854b-9827c9fbc9e8)
 
 ## Installation
 
@@ -105,4 +105,19 @@ To run prettier, run the following command
 
  - [SVG Images](https://undraw.co/)
  - [Hero Icons](https://heroicons.com/)
+
+
+## Screenshots
+
+![App Screenshot](https://github.com/user-attachments/assets/3109354d-58fe-4d0d-930e-9fe2533435f0)
+
+![Screenshot from 2024-08-25 01-40-39](https://github.com/user-attachments/assets/3345ef09-c2b7-4a26-ac2c-d9c5d7b585bf)
+
+![Screenshot from 2024-08-25 01-40-39](https://github.com/user-attachments/assets/e91f09ac-d0c3-487e-8bca-e0dc48e9e23c)
+
+
+
+
+
+
 
