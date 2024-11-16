@@ -5,7 +5,7 @@ import { AfterViewInit, Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div class="absolute inset-0 overflow-hidden bg-card z-0">
+    <div class="absolute inset-0 overflow-hidden bg-transparent z-0">
       <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full opacity-30 mix-blend-soft-light">
         <filter id="noiseFilterBg">
           <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />

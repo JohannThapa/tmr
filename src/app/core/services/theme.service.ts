@@ -1,12 +1,20 @@
 import { Injectable, signal } from '@angular/core';
 import { Theme } from '../models/theme.model';
 import { effect } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   public theme = signal<Theme>({ mode: 'dark', color: 'base' });
+
+  private themeSubject: BehaviorSubject<Theme> = new BehaviorSubject<Theme>({
+    mode: 'dark',
+    color: 'base',
+  });
+  public theme$: Observable<Theme> = this.themeSubject.asObservable();
 
   constructor() {
     this.loadTheme();
@@ -23,7 +31,9 @@ export class ThemeService {
   }
 
   private setTheme() {
-    localStorage.setItem('theme', JSON.stringify(this.theme()));
+    const theme: Theme = this.theme();
+    this.themeSubject.next(theme);
+    localStorage.setItem('theme', JSON.stringify(theme));
     this.setThemeClass();
   }
 
