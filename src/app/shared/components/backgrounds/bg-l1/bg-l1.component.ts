@@ -16,7 +16,6 @@ export class BgL1Component implements OnInit, OnDestroy {
   @Input() light: string = `/assets/bg/top.jpg`;
   @Input() dark: string = `/assets/bg/everest.svg`;
   public imageUrl: string = '';
-    // 'https://images.unsplash.com/photo-1439723680580-bfd9d28ef9b6?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925';
 
   @HostBinding('class') hostClass = '';
   @HostBinding('style.background') backgroundStyle = '';
@@ -32,7 +31,7 @@ export class BgL1Component implements OnInit, OnDestroy {
   private updateBackground(mode: string): void {
     const gradient =
       mode === 'dark'
-        ? 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))'
+        ? 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5))'
         : 'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))';
 
     const position = '50% 50% no-repeat';
