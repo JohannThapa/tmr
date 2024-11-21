@@ -1,7 +1,6 @@
-import { IStacks } from "../models/tech-stacks.model";
+import { IStacks } from '../models/tech-stacks.model';
 
 export const TECH_STACKS: IStacks[] = [
-
   { url: 'https://vuejs.org/', name: 'Vue.js', active: true },
   { url: 'https://nuxt.com/', name: 'Nuxt.js', active: true },
   { url: 'https://github.com/CesiumGS/cesium', name: 'Cesium', active: true },
@@ -81,9 +80,4 @@ export const TECH_STACKS: IStacks[] = [
   { url: 'https://socket.io/', name: 'Socket.IO', active: true },
   { url: 'https://github.com/linnovate/mean', name: 'MEAN', active: true },
 ];
-export const TECH_SKILLS: string[] = [
-  'Full-stack Developer',
-  'UI/UX Designer',
-  'Graphic Designer',
-  'E2E/Unit Tester',
-];
+export const TECH_SKILLS: string[] = ['Full-stack Developer', 'UI/UX Designer', 'Graphic Designer', 'E2E/Unit Tester'];

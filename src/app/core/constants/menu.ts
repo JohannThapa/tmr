@@ -12,6 +12,7 @@ export class Menu {
           route: '/dashboard',
           children: [
             { label: 'Index', route: '/dashboard/index' },
+            { label: 'Projects', route: '/dashboard/projects' },
             { label: 'Crypto', route: '/dashboard/crypto' },
           ],
         },

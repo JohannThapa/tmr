@@ -11,7 +11,7 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   styleUrls: ['./toggle-menu.component.scss'],
 })
 export class ToggleMenuComponent implements OnInit {
-  public currentMode: string; 
+  public currentMode: string;
 
   constructor(public themeService: ThemeService) {
     this.currentMode = this.themeService.theme().mode;

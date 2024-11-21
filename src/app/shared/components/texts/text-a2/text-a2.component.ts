@@ -1,4 +1,3 @@
-
 import { CommonModule, NgClass, NgStyle } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { interval, map, Subject, takeUntil } from 'rxjs';
@@ -15,35 +14,30 @@ import { ButtonA2Component } from '../../animations/button-a2/button-a2.componen
   template: `
     <div id="container" class="text-foreground text-2xl font-bold text-center">
       <div class=" flex h-auto items-center justify-center">
-        <p class="text-shadow-light">A </p>
+        <p class="text-shadow-light">A</p>
         <div id="flip" class="h-[45px] w-auto overflow-hidden">
           <div class="animate-show">
             <div *ngFor="let item of skills">
               <div
-                [ngClass]="
-                  item === ('Full-stack Developer')
-                    ? 'bg-background text-primary'
-                    : 'bg-primary text-white'
-                "
+                [ngClass]="item === 'Full-stack Developer' ? 'bg-background text-primary' : 'bg-primary text-white'"
                 class="py-1 px-2 h-[45px] mb-[45px] inline-block">
                 {{ item }}
               </div>
             </div>
           </div>
         </div>
-        <p class="text-shadow-light"> crafting exceptional</p>
+        <p class="text-shadow-light">crafting exceptional</p>
       </div>
       exceptional digital solutions from inception to deployment.
       <!-- I leverage <span class="text-primary">[ {{ currentStack }} ]</span> to build exceptional digital products. -->
-       <section class="h-[100px]"> </section>
-        <div
+      <section class="h-[100px]"></section>
+      <div
         tmr-button-a2
         [text]="btnText"
         [bgClass]="btnBorderClass"
         [hasAnimation]="btnAnimation"
         routerLink="/skills"
         (buttonClick)="handleButtonClick()"></div>
-
     </div>
   `,
 })

@@ -25,7 +25,6 @@ import { BorderType } from 'src/app/core/types/border-type';
 
       <button
         [ngClass]="['px-6 py-3 text-lg rounded-lg relative ', getButtonClasses()]"
-
         (mouseover)="onMouseOver()"
         (mouseout)="onMouseOut()"
         (click)="onClick($event)"

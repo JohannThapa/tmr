@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { IndexComponent } from './pages/index/index.component';
 import { CryptoComponent } from './pages/crypto/crypto.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'index', pathMatch: 'full' },
       { path: 'index', component: IndexComponent },
+      { path: 'projects', component: ProjectsComponent },
       { path: 'crypto', component: CryptoComponent },
       { path: '**', redirectTo: 'errors/404' },
     ],

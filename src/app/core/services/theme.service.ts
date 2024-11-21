@@ -3,7 +3,6 @@ import { Theme } from '../models/theme.model';
 import { effect } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root',
 })

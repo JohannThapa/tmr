@@ -1,0 +1,30 @@
+<div class="mb-4 flex justify-between relative z-10">
+  <div class="inline-block">
+    <h3 class="font-semibold text-foreground">TMR Projects</h3>
+    <div class="space-x-1 text-xs font-medium text-muted-foreground">
+      <a href class="hover:text-primary">Recent Projects</a>
+      <span> - Projects</span>
+    </div>
+  </div>
+  <div class="inline-block space-x-4" *ngIf="env && !env.production">
+    <button
+      class="hidden sm:block md:hidden rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Mobile
+    </button>
+    <button
+      class="hidden md:block lg:hidden rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Tablet/Ipad
+    </button>
+    <button
+      class="hidden lg:block xl:hidden rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Laptop
+    </button>
+    <button
+      class="hidden xl:block 2xl:hidden rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Desktop
+    </button>
+    <button class="hidden 2xl:block rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Desktop++
+    </button>
+  </div>
+</div>
