@@ -8,6 +8,7 @@ import { TECH_SKILLS, TECH_STACKS } from 'src/app/core/constants/tech-stacks';
 import { CommonModule } from '@angular/common';
 import { BubbleCardComponent } from 'src/app/shared/components/cards/bubble-card/bubble-card.component';
 import { CustomImgComponent } from 'src/app/shared/components/images/custom-img/custom-img.component';
+import { IStacks } from 'src/app/core/models/tech-stacks.model';
 
 @Component({
   selector: 'app-index',
@@ -27,5 +28,5 @@ import { CustomImgComponent } from 'src/app/shared/components/images/custom-img/
 })
 export class IndexComponent {
   skillSet: string[] = TECH_SKILLS;
-  techStacks: string[] = TECH_STACKS;
+  techStacks: IStacks[] = TECH_STACKS;
 }
