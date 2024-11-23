@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'tmr-prj-header',
+  selector: 'tmr-exp-header',
   standalone: true,
   imports: [NgIf],
-  templateUrl: './prj-header.component.html',
+  templateUrl: './exp-header.component.html',
 })
-export class PrjHeaderComponent {
+export class ExpHeaderComponent {
   public env = environment;
 }

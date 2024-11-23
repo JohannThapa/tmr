@@ -4,7 +4,7 @@ import { interval, map, Subject, takeUntil } from 'rxjs';
 import { TECH_SKILLS, TECH_STACKS } from 'src/app/core/constants/tech-stacks';
 import { ButtonA1Component } from '../../animations/button-a1/button-a1.component';
 import { BorderType } from 'src/app/core/types/border-type';
-import { IStacks } from 'src/app/core/models/tech-stacks.model';
+import { IStack } from 'src/app/core/models/tech-stacks.model';
 import { ButtonA2Component } from '../../animations/button-a2/button-a2.component';
 
 @Component({
@@ -44,7 +44,7 @@ import { ButtonA2Component } from '../../animations/button-a2/button-a2.componen
 export class TextA2Component implements OnInit, OnDestroy {
   @Input() skills: string[] = TECH_SKILLS;
   @Input() btnText: string = 'Button';
-  @Input() stacks: IStacks[] = TECH_STACKS;
+  @Input() stacks: IStack[] = TECH_STACKS;
   @Input() btnAnimation: boolean = true;
   @Input() btnBorderClass: BorderType = 'primary';
   currentStack: string = this.stacks[0].name;

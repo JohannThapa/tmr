@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { IndexComponent } from './pages/index/index.component';
 import { CryptoComponent } from './pages/crypto/crypto.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ExperienceComponent } from './pages/experience/experience.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'index', pathMatch: 'full' },
       { path: 'index', component: IndexComponent },
       { path: 'projects', component: ProjectsComponent },
+      { path: 'experience', component: ExperienceComponent },
       { path: 'crypto', component: CryptoComponent },
       { path: '**', redirectTo: 'errors/404' },
     ],

@@ -13,7 +13,8 @@ export class Menu {
           children: [
             { label: 'Index', route: '/dashboard/index' },
             { label: 'Projects', route: '/dashboard/projects' },
-            { label: 'Crypto', route: '/dashboard/crypto' },
+            { label: 'Experiences', route: '/dashboard/experience' },
+            // { label: 'Crypto', route: '/dashboard/crypto' },
           ],
         },
         {
