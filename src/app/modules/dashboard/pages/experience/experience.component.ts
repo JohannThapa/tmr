@@ -6,8 +6,6 @@ import { ExpHeaderComponent } from '../../components/experience/exp-header/exp-h
   standalone: true,
   imports: [ExpHeaderComponent],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss'
+  styleUrl: './experience.component.scss',
 })
-export class ExperienceComponent {
-
-}
+export class ExperienceComponent {}

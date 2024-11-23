@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './prj-modal.component.html',
-  styleUrl: './prj-modal.component.scss'
+  styleUrl: './prj-modal.component.scss',
 })
-export class PrjModalComponent {
-
-}
+export class PrjModalComponent {}

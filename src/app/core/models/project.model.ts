@@ -1,6 +1,6 @@
-import { IStack } from "./tech-stacks.model";
+import { IStack } from './tech-stacks.model';
 
-export interface IProject{
+export interface IProject {
   id: string;
   title: string;
   description?: string;
@@ -18,8 +18,7 @@ export interface ISite {
   name?: string;
 }
 
-export interface ITechnology{
- category?: string;
- items?: IStack[];
+export interface ITechnology {
+  category?: string;
+  items?: IStack[];
 }
-
