@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ITechnology } from 'src/app/core/models/project.model';
+import { TECHNOLOGIES } from '../../../pages/experience/data/technologies';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-exp-technologies',
+  selector: 'tmr-exp-technologies',
   standalone: true,
-  imports: [],
+  imports: [AngularSvgIconModule, NgFor, NgClass],
   templateUrl: './exp-technologies.component.html',
   styleUrl: './exp-technologies.component.scss',
 })
-export class ExpTechnologiesComponent {}
+export class ExpTechnologiesComponent {
+  @Input() tech: ITechnology[] = TECHNOLOGIES;
+}

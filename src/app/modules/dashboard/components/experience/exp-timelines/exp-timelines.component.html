@@ -1,0 +1,38 @@
+<div class="timeline-container">
+  <section class="timeline text-foreground">
+    <ol>
+      <li *ngFor="let event of timelineData" class="timeline-item">
+        <div class="hidden md:block w-20 -ml-16 -mb-12 seccion">
+          <div class="font-normal italic text-xs lowercase text-gray-400">
+            {{ getTotalDuration(event.timePeriod.startDate, event.timePeriod.endDate) }}
+          </div>
+          <div class="md:flex space-x-1 text-xs font-medium">
+            <div>{{ event.timePeriod.startDate | date : 'MMM yyyy' }}.</div>
+            <div>-</div>
+            <div>{{ event.timePeriod.endDate | date : 'MMM yyyy' }}.</div>
+          </div>
+        </div>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time class="font-bold"><span class="text-gray-500 font-medium"></span>{{ event.job }}</time>
+          </div>
+          <div class="details">
+            <h3 class="italic font-semibold mb-0 font-matemasie">{{ event.company.name }}</h3>
+            <div
+              class="description mb-4 text-gray-700 list-disc list-inside"
+              [innerHTML]="getSanitizedDescription(event.description)"></div>
+            <div class="tech-stacks flex flex-wrap">
+              <tmr-badge-a1
+                *ngFor="let tech of event.techStacks"
+                [icon]="tech.icon ?? ''"
+                [text]="tech.name"
+                [bgColor]="'bg-gray-200'"
+                [hoverBgColor]="'hover:bg-gray-300'"
+                [textColor]="'text-gray-600'"></tmr-badge-a1>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+</div>

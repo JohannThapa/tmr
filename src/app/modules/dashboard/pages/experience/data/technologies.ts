@@ -2,32 +2,148 @@ import { ITechnology } from 'src/app/core/models/project.model';
 
 export const TECHNOLOGIES: ITechnology[] = [
   {
-    category: 'Backend',
+    category: 'Database',
     items: [
       {
-        name: 'Python',
-        logo: '/assets/images/logos/python.png',
+        name: 'MySql',
+        logo: '/assets/icons/icon8/icons8-mysql-250.svg',
         id: 1,
-        url: 'https://www.python.org/',
+        url: 'https://www.mysql.com/',
+        active: true,
+        description: 'MySQL (/ˌmaɪˌɛsˌkjuːˈɛl/) is an open-source relational database management system (RDBMS)',
+      },
+      {
+        name: 'postgresql',
+        logo: '/assets/icons/icon8/icons8-postgresql-250.svg',
+        id: 2,
+        url: 'https://www.postgresql.org/',
         active: true,
         description:
-          'Python is a programming language that lets you work quickly and integrate systems more effectively.',
+          'PostgreSQL (/ˌpoʊstɡrɛskjuˈɛl/ POHST-gres-kew-EL) also known as Postgres, is a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.',
       },
       {
-        name: 'Node.js',
-        logo: '/assets/images/logos/nodejs.png',
-        id: 2,
-        url: 'https://nodejs.org/',
-        active: true,
-        description: "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-      },
-      {
-        name: 'Express.js',
-        logo: '/assets/images/logos/expressjs.png',
+        name: 'GCP',
+        logo: '/assets/icons/icon8/icons8-google-cloud-platform-250.svg',
         id: 3,
-        url: 'https://expressjs.com/',
+        url: 'https://cloud.google.com/',
         active: true,
-        description: 'Express.js is a fast, unopinionated, minimalist web framework for Node.js.',
+        description:
+          'GCP is a suite of cloud computing services offered by Google that provides a series of modular cloud services, including computing, data storage, data analytics, and machine learning, alongside a set of management tools.',
+      },
+      {
+        name: 'AWS',
+        logo: '/assets/icons/icon8/icons8-aws-192.svg',
+        id: 3,
+        url: 'https:',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'MongoDB',
+        logo: '/assets/icons/icon8/icons8-mongodb-240.svg',
+        id: 31,
+        url: 'https:',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'SQLite',
+        logo: '/assets/icons/icon8/icons8-sqlite-250.svg',
+        id: 32,
+        url: 'https:',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'Firebase/Firestore',
+        logo: '/assets/icons/icon8/icons8-firebase-192.svg',
+        id: 33,
+        url: 'https:',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'GraphQL',
+        logo: '/assets/icons/icon8/icons8-graphql-250.svg',
+        id: 34,
+        url: 'https:',
+        active: true,
+        description:
+          'A query language for APIs, often used as an alternative to RESTful APIs for fetching data from databases',
+      },
+      {
+        name: 'Prisma',
+        logo: '/assets/icons/icon8/icons8-prisma-orm-250.svg',
+        id: 34,
+        url: 'https:',
+        active: true,
+        description: 'A next-generation ORM for Node.js and TypeScript, designed for efficiency and ease of use.',
+      },
+      {
+        name: 'Django ORM',
+        logo: '/assets/icons/icon8/icons8-django-250.svg',
+        id: 34,
+        url: 'https:',
+        active: true,
+        description:
+          'The built-in ORM that comes with Django (Python web framework), allowing for easy database interactions with models and migrations.',
+      },
+    ],
+  },
+  {
+    category: 'Design',
+    items: [
+      {
+        name: 'Sass/Scss',
+        logo: '/assets/icons/icon8/icons8-sass-250.svg',
+        id: 41,
+        url: '/',
+        active: true,
+        description: '.',
+      },
+      {
+        name: 'Bootstrap',
+        logo: '/assets/icons/icon8/icons8-bootstrap-240.svg',
+        id: 42,
+        url: 'https://getbootstrap.com/',
+        active: true,
+        description:
+          'A popular front-end framework for developing responsive, mobile-first websites, featuring pre-styled components and JavaScript plugins.',
+      },
+      {
+        name: 'Tailwind CSS',
+        logo: '/assets/icons/icon8/icons8-tailwind-css-240.svg',
+        id: 5,
+        url: 'https://tailwindcss.com/',
+        active: true,
+        description:
+          'A utility-first CSS framework that provides highly customizable and responsive design tools for building modern web interfaces.',
+      },
+      {
+        name: 'Material-UI',
+        logo: '/assets/icons/icon8/icons8-material-ui-240.svg',
+        id: 6,
+        url: 'https://mui.com/',
+        active: true,
+        description:
+          "A React component library implementing Google's Material Design system, offering pre-built UI components for faster web development.",
+      },
+      {
+        logo: '/assets/icons/icon8/icons8-chakra-ui-144.svg',
+        name: 'Chakra UI',
+        id: 5,
+        url: '/',
+        active: true,
+        description: '',
+      },
+      {
+        logo: '/assets/icons/icon8/icons8-bulma-io-144.svg',
+        name: 'Bulma',
+        id: 5,
+        url: '/',
+        active: true,
+        description:
+          'A modern CSS framework based on Flexbox, providing responsive, mobile-first grid and UI components.',
       },
     ],
   },
@@ -36,7 +152,7 @@ export const TECHNOLOGIES: ITechnology[] = [
     items: [
       {
         name: 'React',
-        logo: '/assets/images/logos/react.png',
+        logo: '/assets/icons/icon8/icons8-react-240.svg',
         id: 4,
         url: 'https://reactjs.org/',
         active: true,
@@ -44,7 +160,7 @@ export const TECHNOLOGIES: ITechnology[] = [
       },
       {
         name: 'Angular',
-        logo: '/assets/images/logos/angular.png',
+        logo: '/assets/icons/icon8/icons8-angular-250.svg',
         id: 5,
         url: 'https://angular.io/',
         active: true,
@@ -52,11 +168,89 @@ export const TECHNOLOGIES: ITechnology[] = [
       },
       {
         name: 'Vue.js',
-        logo: '/assets/images/logos/vuejs.png',
+        logo: '/assets/icons/icon8/icons8-vuejs-250.svg',
         id: 6,
         url: 'https://vuejs.org/',
         active: true,
         description: 'Vue.js is a progressive framework for building user interfaces.',
+      },
+      {
+        name: 'NextJs',
+        logo: '/assets/icons/icon8/icons8-nextjs-240.svg',
+        id: 6,
+        url: 'https://',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'Nuxt',
+        logo: '/assets/icons/icon8/icons8-nuxt-js-240.svg',
+        id: 62,
+        url: 'https://',
+        active: true,
+        description: '',
+      },
+      {
+        logo: '/assets/icons/icon8/icons8-svelte-256.svg',
+        name: 'Svelte',
+        id: 63,
+        url: 'https://',
+        active: true,
+        description: '',
+      },
+    ],
+  },
+  {
+    category: 'Backend',
+    items: [
+      {
+        name: 'ASP.NET Core',
+        logo: '/assets/icons/icon8/icons8-.net-framework-240.svg',
+        id: 10,
+        url: 'https://dotnet.microsoft.com/',
+        active: true,
+        description:
+          '.NET is a free, cross-platform, open-source developer platform for building many different types of applications.',
+      },
+      {
+        name: 'Express.js',
+        logo: '/assets/icons/icon8/icons8-express-js-240.svg',
+        id: 7,
+        url: '',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'NestJs',
+        logo: '/assets/icons/icon8/icons8-nestjs-240.svg',
+        id: 8,
+        url: '',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'NodeJs',
+        logo: '/assets/icons/icon8/icons8-nodejs-256.svg',
+        id: 81,
+        url: '',
+        active: true,
+        description: '',
+      },
+      {
+        name: 'Flask',
+        logo: '/assets/icons/icon8/icons8-flask-250.svg',
+        id: 82,
+        url: '',
+        active: true,
+        description: 'A micro-framework for Python, offering simplicity and flexibility.',
+      },
+      {
+        name: 'Django',
+        logo: '/assets/icons/icon8/icons8-django-250.svg',
+        id: 89,
+        url: '',
+        active: true,
+        description: 'A high-level Python web framework for rapid development and clean, pragmatic design.',
       },
     ],
   },
@@ -65,7 +259,7 @@ export const TECHNOLOGIES: ITechnology[] = [
     items: [
       {
         name: 'Flutter',
-        logo: '/assets/images/logos/flutter.png',
+        logo: '/assets/icons/icon8/icons8-flutter-240.svg',
         id: 7,
         url: 'https://flutter.dev/',
         active: true,
@@ -73,42 +267,29 @@ export const TECHNOLOGIES: ITechnology[] = [
       },
       {
         name: 'React Native',
-        logo: '/assets/images/logos/react-native.png',
+        logo: '/assets/icons/icon8/icons8-react-native-250.svg',
         id: 8,
         url: 'https://reactnative.dev/',
         active: true,
         description: 'React Native is an open-source UI software framework for building mobile applications.',
       },
-    ],
-  },
-  {
-    category: 'Desktop',
-    items: [
       {
-        name: 'Electron',
-        logo: '/assets/images/logos/electron.png',
-        id: 9,
-        url: 'https://www.electronjs.org/',
+        name: 'Ionic',
+        logo: '/assets/icons/icon8/icons8-ionic-250.svg',
+        id: 8,
+        url: 'https://ionic.dev/',
         active: true,
-        description: 'Electron is a framework for building cross-platform desktop apps with JavaScript, HTML, and CSS.',
-      },
-      {
-        name: '.NET',
-        logo: '/assets/images/logos/dotnet.png',
-        id: 10,
-        url: 'https://dotnet.microsoft.com/',
-        active: true,
-        description:
-          '.NET is a free, cross-platform, open-source developer platform for building many different types of applications.',
+        description: 'Ionic is an open-source UI software framework for building mobile applications.',
       },
     ],
   },
+
   {
     category: 'Graphic',
     items: [
       {
         name: 'Adobe Photoshop',
-        logo: '/assets/images/logos/photoshop.png',
+        logo: '/assets/icons/icon8/icons8-adobe-photoshop-250.svg',
         id: 11,
         url: 'https://www.adobe.com/products/photoshop.html',
         active: true,
@@ -116,7 +297,7 @@ export const TECHNOLOGIES: ITechnology[] = [
       },
       {
         name: 'Adobe Illustrator',
-        logo: '/assets/images/logos/illustrator.png',
+        logo: '/assets/icons/icon8/icons8-adobe-illustrator-240.svg',
         id: 12,
         url: 'https://www.adobe.com/products/illustrator.html',
         active: true,
@@ -124,11 +305,78 @@ export const TECHNOLOGIES: ITechnology[] = [
       },
       {
         name: 'Figma',
-        logo: '/assets/images/logos/figma.png',
+        logo: '/assets/icons/icon8/icons8-figma-250.svg',
         id: 13,
         url: 'https://www.figma.com/',
         active: true,
         description: 'Figma is a web-based interface design application with real-time collaboration features.',
+      },
+      {
+        name: 'Canva',
+        logo: '/assets/icons/icon8/icons8-canva-200.svg',
+        id: 91,
+        url: '/',
+        active: true,
+        description:
+          'A simplified, web-based graphic design tool for creating marketing materials, social media posts, and other visuals with templates.',
+      },
+      {
+        name: 'GIMP',
+        logo: '/assets/icons/icon8/icons8-gimp-256.svg',
+        id: 91,
+        url: '',
+        active: true,
+        description:
+          'A free and open-source image editor, widely used as an alternative to Photoshop for bitmap-based designs.',
+      },
+    ],
+  },
+  {
+    category: 'Others',
+    items: [
+      {
+        name: 'pyTorch',
+        logo: '/assets/icons/icon8/icons8-pytorch-240.svg',
+        id: 111,
+        url: '/',
+        active: true,
+        description:
+          'A deep learning library for Python, often used for image classification, segmentation, and other computer vision tasks.',
+      },
+      {
+        name: 'TensorFlow',
+        logo: '/assets/icons/icon8/icons8-tensorflow-240.svg',
+        id: 112,
+        url: '/',
+        active: true,
+        description:
+          'A popular open-source library for machine learning that also includes image processing and computer vision capabilities.',
+      },
+      {
+        name: 'OpenAI',
+        logo: '/assets/icons/icon8/icons8-chatgpt-250.svg',
+        id: 121,
+        url: 'https://openai.com/api/',
+        active: true,
+        description: `An API that provides access to OpenAI's GPT-3 models for generating human-like text, understanding context, answering questions, and more.`,
+      },
+      {
+        name: 'DeepAI',
+        logo: '/assets/icons/icon8/icons8-deepai-250.svg',
+        id: 131,
+        url: 'https://deepai.org/',
+        active: true,
+        description:
+          'A platform that provides several AI APIs for tasks such as image processing, text generation, and machine learning model training.',
+      },
+      {
+        name: 'Replicate',
+        logo: 'src/assets/icons/icon8/icons8-replicate-250.svg',
+        id: 111,
+        url: 'https://replicate.com/',
+        active: true,
+        description:
+          'A platform to run machine learning models in the cloud, offering APIs for accessing and executing popular ML models like GPT, stable diffusion, and others.',
       },
     ],
   },
