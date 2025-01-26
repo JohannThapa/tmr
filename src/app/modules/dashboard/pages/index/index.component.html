@@ -1,52 +1,67 @@
-<div tmr-bg-l1 dark="/assets/bg/mountains.jpeg" light="/assets/bg/top.jpg">
-  <div tmr-bg-a1 class="lg:p-12 p-4">
-    <!-- Header -->
-    <app-idx-header></app-idx-header>
+<div *ngIf="isDesktop$ | async; else isMobileTemplate">
+  <div tmr-bg-l1 dark="/assets/bg/mountains.jpeg" light="/assets/bg/top.jpg">
+    <div tmr-bg-a1 class="lg:p-12 p-4">
+      <!-- Header -->
+      <app-idx-header></app-idx-header>
 
-    <div class="grid grid-cols-1 lg:grid-cols-8 pt-12 lg:pt-12 gap-2 relative z-10">
-      <div class="col-start-2 col-span-6">
-        <div class="flex flex-col-reverse lg:flex-row">
-          <div class="lg:basis-grow">
-            <!-- Introduction -->
-            <div class="flex justify-center items-center">
-              <div class="grid grid-rows-3 mt-8 grid-flow-col">
-                <div class="col-span-2">
-                  <div
-                    tmr-text-a1
-                    text="Hi, I'm Rupak T Magar"
-                    [highlightIndex]="8"
-                    fontSize="text-4xl md:text-5xl lg:text-[70px]"
-                    class="text-center"></div>
-                </div>
-                <div class="row-span-2 col-span-2 mt-6">
-                  <div
-                    tmr-text-a2
-                    [stacks]="techStacks"
-                    [skills]="skillSet"
-                    btnText="Projects"
-                    class="text-base md:text-lg lg:text-xl"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-8 pt-12 lg:pt-12 gap-2 relative z-10">
+        <div class="col-start-2 col-span-6">
+          <div class="flex flex-col-reverse lg:flex-row">
+            <div class="lg:basis-grow">
+              <!-- Introduction -->
+              <div class="flex justify-center items-center">
+                <div class="grid grid-rows-3 mt-8 grid-flow-col">
+                  <div class="col-span-2">
+                    <div
+                      tmr-text-a1
+                      text="I'm TM. Rupak(Johann)"
+                      [highlightIndex]="8"
+                      fontSize="text-4xl md:text-5xl lg:text-[70px]"
+                      class="text-center"></div>
+                  </div>
+                  <div class="row-span-2 col-span-2 mt-6">
+                    <div
+                      tmr-text-a2
+                      [stacks]="techStacks"
+                      [skills]="skillSet"
+                      btnText="Projects"
+                      class="text-base md:text-lg lg:text-xl"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Image Card -->
-          <div
-            tmr-bubble-card
-            [width]="300"
-            [height]="300"
-            customClass="flex-none w-full h-[300px] md:h-[400px] lg:w-[300px]">
-            <tmr-custom-img
-              src="./assets/images/rupak.png"
-              alt="Sample Image"
-              [width]="600"
-              [height]="400"
-              [fill]="false"
-              [priority]="true"
-              loading="eager"
-              customClass="custom-image-class"></tmr-custom-img>
+            <!-- Image Card -->
+            <div
+              tmr-bubble-card
+              [width]="300"
+              [height]="300"
+              customClass="flex-none w-full h-[300px] md:h-[400px] lg:w-[300px]">
+              <tmr-custom-img
+                src="./assets/images/rupak.png"
+                alt="Sample Image"
+                [width]="600"
+                [height]="400"
+                [fill]="false"
+                [priority]="true"
+                loading="eager"
+                customClass="custom-image-class"></tmr-custom-img>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #isMobileTemplate>
+  <div class="h-xsh mt-2" tmr-bg-l1 dark="/assets/bg/mobile/mountain.webp" light="/assets/bg/mobile/white02.webp">
+    <tmr-idx-mobile
+      [socialLinks]="socialLinks"
+      [isColor]="true"
+      profilePicture="./assets/images/rupak.png"></tmr-idx-mobile>
+  </div>
+</ng-template>
+
+<!-- NOTE: Example usage -->
+<!-- <div *ngIf="(isTablet$ | async)">Tablet View</div>
+<div *ngIf="(isMobile$ | async)">Mobile View</div>
+<div *ngIf="(isDesktop$ | async)">Desktop View</div> -->

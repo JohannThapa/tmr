@@ -11,6 +11,9 @@ importers:
       '@angular/animations':
         specifier: ^18.1.0
         version: 18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))
+      '@angular/cdk':
+        specifier: ^19.1.1
+        version: 19.1.1(@angular/common@18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0))(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0)
       '@angular/common':
         specifier: ^18.1.0
         version: 18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0)
@@ -311,6 +314,13 @@ packages:
         optional: true
       tailwindcss:
         optional: true
+
+  '@angular/cdk@19.1.1':
+    resolution: {integrity: sha512-MmfNB9iANuDN1TS+HL8uKqA3/7pdVeCRN+HdAcfqFrcqZmSUUSlYWy8PXqymmyeXxoSwt9p4I/6R0By03VoCMw==}
+    peerDependencies:
+      '@angular/common': ^19.0.0 || ^20.0.0
+      '@angular/core': ^19.0.0 || ^20.0.0
+      rxjs: ^6.5.3 || ^7.4.0
 
   '@angular/cli@18.1.4':
     resolution: {integrity: sha512-ppX4iilA6k+sKD6iRMRYnt2bH9Jpik+hJlndRBCjWo2EmEUQ04CBRKYONh8BLbnmwBxPG+/osUpcFrbkPCjQUw==}
@@ -5308,6 +5318,15 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  '@angular/cdk@19.1.1(@angular/common@18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0))(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0)':
+    dependencies:
+      '@angular/common': 18.1.4(@angular/core@18.1.4(rxjs@7.4.0)(zone.js@0.14.10))(rxjs@7.4.0)
+      '@angular/core': 18.1.4(rxjs@7.4.0)(zone.js@0.14.10)
+      rxjs: 7.4.0
+      tslib: 2.6.3
+    optionalDependencies:
+      parse5: 7.1.2
 
   '@angular/cli@18.1.4(chokidar@3.6.0)':
     dependencies:

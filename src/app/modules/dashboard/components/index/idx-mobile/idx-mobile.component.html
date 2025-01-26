@@ -1,0 +1,45 @@
+<div class="mobile-rupak pt-12">
+  <div class="flex justify-center">
+    <div
+      tmr-bubble-card
+      [width]="300"
+      [height]="300"
+      customClass="flex-none w-full h-[300px] md:h-[400px] lg:w-[300px]">
+      <tmr-custom-img
+        [src]="profilePicture"
+        alt="Sample Image"
+        [width]="600"
+        [height]="400"
+        [fill]="false"
+        [priority]="true"
+        loading="eager"
+        customClass="custom-image-class"></tmr-custom-img>
+    </div>
+  </div>
+</div>
+<div class="mobile-intro">
+  <div class="flex justify-center items-center">
+    <div class="w-80 h-40 relative flex flex-col justify-center items-center">
+      <div class="relative flex items-center justify-center h-12 w-full">
+        <span class="absolute h-full bg-glassy animate-mainBlock"></span>
+        <h1
+          class="relative flex items-baseline font-ubuntu text-[28px] font-semibold text-foreground animate-mainFadeIn opacity-0">
+          <span class="initial-letter text-primary">T</span>hapa &nbsp;<span class="initial-letter text-primary">
+            M</span
+          >agar &nbsp;<span class="initial-letter text-primary"> R</span>upak
+          <span class="absolute bottom-3 -right-3 w-0 h-0 rounded-full bg-primary animate-popIn"></span>
+        </h1>
+      </div>
+
+      <div class="relative flex justify-center items-center mt-[-5px] h-7 w-full">
+        <div class="absolute h-full bg-primary animate-secBlock"></div>
+        <p class="font-nunito text-md uppercase tracking-wide text-foreground opacity-0 animate-secFadeIn">
+          Full-stack Developer
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex justify-center">
+  <tmr-social-button [isColor]="true" [socialLinks]="socialLinks"></tmr-social-button>
+</div>

@@ -1,0 +1,17 @@
+.social a {
+  @apply opacity-0 scale-0 transition-all duration-[700ms];
+  &:hover {
+    @apply text-yellow-400;
+    transition-timing-function: ease-in-out !important;
+    transition-delay: 1ms !important;
+  }
+}
+
+.main:hover .social a {
+  @apply scale-100 opacity-100;
+  transition-timing-function: cubic-bezier(1, -0.03, 0, 1.85);
+}
+
+.main:hover .btn {
+  @apply transform translate-x-[-500px];
+}

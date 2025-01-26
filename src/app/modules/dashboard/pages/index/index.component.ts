@@ -9,6 +9,10 @@ import { CommonModule } from '@angular/common';
 import { BubbleCardComponent } from 'src/app/shared/components/cards/bubble-card/bubble-card.component';
 import { CustomImgComponent } from 'src/app/shared/components/images/custom-img/custom-img.component';
 import { IStack } from 'src/app/core/models/tech-stacks.model';
+import { ResponsiveService } from 'src/app/core/services/responsive.service';
+import { IdxMobileComponent } from '../../components/index/idx-mobile/idx-mobile.component';
+import { ISocials } from 'src/app/shared/models/socials';
+import { SOCIAL_LINKS } from 'src/app/core/constants/social-links';
 
 @Component({
   selector: 'app-index',
@@ -22,6 +26,7 @@ import { IStack } from 'src/app/core/models/tech-stacks.model';
     TextA2Component,
     BubbleCardComponent,
     CustomImgComponent,
+    IdxMobileComponent,
   ],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss',
@@ -29,4 +34,11 @@ import { IStack } from 'src/app/core/models/tech-stacks.model';
 export class IndexComponent {
   skillSet: string[] = TECH_SKILLS;
   techStacks: IStack[] = TECH_STACKS;
+  socialLinks: ISocials[] = SOCIAL_LINKS;
+
+  isTablet$ = this.responsiveService.isTablet$;
+  isMobile$ = this.responsiveService.isMobile$;
+  isDesktop$ = this.responsiveService.isDesktop$;
+
+  constructor(private responsiveService: ResponsiveService) {}
 }

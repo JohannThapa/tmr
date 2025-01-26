@@ -1,3 +1,4 @@
+<!-- <tmr-info-card></tmr-info-card> -->
 <section class="carousel">
   <main>
     <ul #slider class="slider">
@@ -13,7 +14,7 @@
             [text]="slide.buttonText"
             bgClass="primary"
             [hasAnimation]="true"
-            routerLink="/skills"
+            routerLink=""
             (buttonClick)="handleButtonClick()"></div>
         </div>
       </li>
@@ -32,3 +33,5 @@
     </nav>
   </main>
 </section>
+
+<app-prj-modal [isVisible]="isModalVisible" (closeModalEvent)="closeModal()"></app-prj-modal>

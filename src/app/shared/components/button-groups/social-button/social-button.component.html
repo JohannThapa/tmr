@@ -1,0 +1,18 @@
+<div
+  class="main relative flex items-center justify-center w-72 h-12 rounded-full bg-primary-foreground text-black font-bold">
+  <div class="social flex absolute items-center justify-evenly w-full h-full">
+    <a
+      *ngFor="let link of socialLinks; let i = index"
+      [href]="link.url"
+      target="_blank"
+      class="text-black text-2xl transition duration-[700ms] transform scale-0 opacity-0 hover:text-yellow-400"
+      [ngStyle]="{ 'transition-delay': (socialLinks.length - i) * 85 + 'ms' }">
+      <img [src]="isColor ? link.icon.colored : link.icon.solid" alt="Social Icon" class="w-6 h-6" />
+    </a>
+  </div>
+
+  <div
+    class="btn flex items-center justify-center w-full h-full absolute top-0 left-0 bg-primary rounded-full text-white text-lg transition-transform duration-[950ms] transform hover:translate-x-[-500px]">
+    <span>Connect with me</span>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="banner-text-zone">
+    <div class="banner-text-zone text-white">
       <h1>
         <span *ngFor="let letter of text.split(''); let i = index" [ngClass]="generateClass(i)">
           {{ letter === ' ' ? '&nbsp;' : letter }}
@@ -24,7 +24,7 @@ export class TextA1Component implements OnInit {
   private baseClasses: string = '';
 
   ngOnInit() {
-    this.baseClasses = `inline-block hover:cursor-pointer text-foreground text-shadow-a1-primary font-matemasie font-semibold ${this.fontSize}`;
+    this.baseClasses = `inline-block hover:cursor-pointer font-rubik font-[800] ${this.fontSize}`;
   }
 
   generateClass(index: number): string {

@@ -1,0 +1,72 @@
+<div class="stage">
+  <input id="trigger" type="checkbox" />
+  <div class="stage_bg"></div>
+  <div class="stage_inner">
+    <div class="stage_inner__logo">
+      {{ projectTitle }}
+      <span>{{ projectSubtitle }}</span>
+    </div>
+    <div class="stage_inner__menu">
+      <div class="menu">
+        <div class="menu_part"></div>
+        <div class="menu_part"></div>
+        <div class="menu_part"></div>
+      </div>
+    </div>
+    <div class="stage_inner__footer">
+      <i *ngFor="let link of socialLinks" [class]="link.iconClass"></i>
+      <div class="f">
+        <input placeholder="Your question" />
+      </div>
+    </div>
+    <h5>Topics</h5>
+    <div class="stage_inner__articleTwo">
+      <h3>{{ secondaryArticle.title }}</h3>
+      <p>{{ secondaryArticle.description }}</p>
+      <p class="auth">{{ secondaryArticle.author }}</p>
+      <p class="date">{{ secondaryArticle.date }}</p>
+    </div>
+    <div class="stage_inner__article">
+      <h2 class="fade">{{ featuredArticle.heading }}</h2>
+      <h3>{{ featuredArticle.title }}</h3>
+      <p>{{ featuredArticle.description }}</p>
+      <p class="auth">{{ featuredArticle.author }}</p>
+      <p class="date">{{ featuredArticle.date }}</p>
+    </div>
+    <div class="stage_inner__bottom">
+      <div class="link fade" *ngFor="let link of bottomLinks">
+        <a [href]="link.url">{{ link.title }}</a>
+        <p>{{ link.author }}</p>
+        <p class="date">{{ link.date }}</p>
+      </div>
+    </div>
+    <div class="stage_inner__list">
+      <li *ngFor="let topic of topics">{{ topic }}</li>
+    </div>
+    <div class="stage_inner__centerbox">
+      <div class="illustration"></div>
+      <div class="arrow">
+        <label for="trigger">
+          <i class="fas fa-arrow-right"></i>
+        </label>
+      </div>
+      <div class="text">
+        <div class="title">
+          {{ projectCategory }}
+        </div>
+        <div class="articles">{{ articleCount }} Articles</div>
+      </div>
+    </div>
+    <div class="stage_inner__right">
+      <div class="input">
+        <input placeholder="Symptom Checker" />
+      </div>
+      <h2 class="fade">Popular</h2>
+      <div class="link fade" *ngFor="let link of popularLinks">
+        <a [href]="link.url">{{ link.title }}</a>
+        <p>{{ link.author }}</p>
+        <p class="date">{{ link.date }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,31 @@
-<p>prj-modal works!</p>
+<div class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" *ngIf="isVisible">
+  <div
+    class="bg-background rounded-lg md:overflow-hidden shadow-xl transform transition-all w-[90%] h-full md:h-auto overflow-auto">
+    <div class="bg-background px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div class="sm:flex sm:items-start">
+        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+          <tmr-info-card
+            [projectTitle]="'My Portfolio'"
+            [projectSubtitle]="'Projects'"
+            [projectCategory]="'Web Development'"
+            [articleCount]="50"
+            [featuredArticle]="featured"
+            [secondaryArticle]="secondary"
+            [topics]="['Frontend', 'Backend', 'UI/UX']"
+            [bottomLinks]="bottomArticles"
+            [popularLinks]="popularArticles"
+            [socialLinks]="socialIcons">
+          </tmr-info-card>
+        </div>
+      </div>
+    </div>
+    <div class="bg-background px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+      <button
+        type="button"
+        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm"
+        (click)="closeModal()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

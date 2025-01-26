@@ -3,17 +3,20 @@ import { NgFor, NgStyle } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonA2Component } from '../../animations/button-a2/button-a2.component';
+import { PrjModalComponent } from 'src/app/modules/dashboard/components/projects/prj-modal/prj-modal.component';
+import { InfoCardComponent } from '../../cards/info-card/info-card.component';
 
 @Component({
   selector: 'tmr-slider-a1',
   standalone: true,
-  imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component],
+  imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component, PrjModalComponent, InfoCardComponent],
   templateUrl: './slider-a1.component.html',
   styleUrl: './slider-a1.component.scss',
 })
 export class SliderA1Component implements AfterViewInit {
   @ViewChild('slider', { static: true }) slider!: ElementRef;
 
+  isModalVisible: boolean = false;
   slides = [
     {
       image: '/assets/images/projects/project-1.jpg',
@@ -105,7 +108,15 @@ export class SliderA1Component implements AfterViewInit {
       }, 250);
     }
   }
+  openModal() {
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
+  }
   handleButtonClick(): void {
     console.log('click');
+    this.openModal();
   }
 }

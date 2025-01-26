@@ -1,5 +1,6 @@
 // const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   prefix: '',
   mode: 'jit',
@@ -8,6 +9,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      height: {
+        xsh: '82vh',
+        'screen/2': '50vh',
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
@@ -126,7 +131,33 @@ module.exports = {
           '90%': { transform: 'rotate(324deg)' },
           '95%': { transform: 'rotate(342deg)' },
           '100%': { transform: 'rotate(360deg)' },
-        }
+        },
+        // mobile index banner
+        mainBlock: {
+          "0%": { width: "0%", left: "0" },
+          "50%": { width: "100%", left: "0" },
+          "100%": { width: "0", left: "100%" },
+        },
+        secBlock: {
+          "0%": { width: "0%", left: "0" },
+          "50%": { width: "100%", left: "0" },
+          "100%": { width: "0", left: "100%" },
+        },
+        mainFadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        popIn: {
+          "0%": { width: "0", height: "0", opacity: "0" },
+          "50%": { width: "10px", height: "10px", opacity: "1", bottom: "45px" },
+          "65%": { width: "7px", height: "7px", bottom: "0px" },
+          "80%": { width: "10px", height: "10px", bottom: "20px" },
+          "100%": { width: "7px", height: "7px", bottom: "13px" },
+        },
+        secFadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "0.5" },
+        },
 
       },
       animation: {
@@ -143,6 +174,12 @@ module.exports = {
         'fade-out-up': 'fade-out-up 0.3s ease-out',
         show: 'show 6s linear infinite', // text-a2
         'btn-a1': 'rotate 5s linear infinite', // button-a1
+        // mobile index banner
+        mainFadeIn: "mainFadeIn 2s forwards",
+        popIn: "popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 2s",
+        mainBlock: "mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards",
+        secBlock: "secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 2s",
+        secFadeIn: "secFadeIn 2s forwards 3.2s",
       },
       boxShadow: {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',
@@ -205,6 +242,7 @@ module.exports = {
       poppins: ['Poppins', 'sans-serif'],
       nunito: ['Nunito Sans', 'sans-serif'],
       matemasie: ['Matemasie', 'sans-serif'],
+      rubik: ['Rubik', 'sans-serif'],
     },
     container: {
       padding: {
