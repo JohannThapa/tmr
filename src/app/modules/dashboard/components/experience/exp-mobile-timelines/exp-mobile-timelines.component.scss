@@ -1,0 +1,72 @@
+.card::before {
+  @apply border-primary;
+  content: "";
+  position: absolute;
+  width: 50%;
+  animation: flow 3s linear infinite;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border-width: 3px;
+  @apply border-primary;
+}
+
+/* text right if the card is even  */
+.card:nth-child(even) > .info > .title {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .title::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
+}
+
+
+
+@keyframes flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  animation: flow 3s linear infinite;
+}
+
+.card:nth-child(odd)::before {
+  left: 0;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
