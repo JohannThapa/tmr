@@ -1,0 +1,47 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.creature-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.creature {
+  font-size: 0.1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 130em;
+  height: 130em;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.creature div {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  margin: 2em;
+  border-radius: 1.5em;
+  will-change: transform, opacity;
+  mix-blend-mode: plus-lighter;
+  background: hsl(4, 70%, 50%);
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
