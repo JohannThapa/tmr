@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 import { IDualCardStyle } from 'src/app/modules/dashboard/models/single-card';
 
 @Component({
-  selector: '[tmr-dual-card-loader]',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: '[tmr-dual-card-loader]',
+    imports: [],
+    template: `
     <div
       role="status"
       class="flex min-h-[{{
@@ -58,7 +57,7 @@ import { IDualCardStyle } from 'src/app/modules/dashboard/models/single-card';
       <span class="sr-only">Loading...</span>
     </div>
   `,
-  styles: ``,
+    styles: ``
 })
 export class DualLoaderComponent {
   @Input() cardStyle: IDualCardStyle = {

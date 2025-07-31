@@ -1,10 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
-  selector: '[tmr-bg-a1]',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: '[tmr-bg-a1]',
+    imports: [],
+    template: `
     <div class="absolute inset-0 overflow-hidden bg-transparent z-0">
       <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full opacity-30 mix-blend-soft-light">
         <filter id="noiseFilterBg">
@@ -23,7 +22,7 @@ import { AfterViewInit, Component } from '@angular/core';
     </div>
     <ng-content></ng-content>
   `,
-  styleUrl: './bg-a1.component.scss',
+    styleUrl: './bg-a1.component.scss'
 })
 export class BgA1Component implements AfterViewInit {
   constructor() {}

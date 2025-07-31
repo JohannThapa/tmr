@@ -11,11 +11,10 @@ import { CommonModule } from '@angular/common';
 import { ExpMobileTimelinesComponent } from '../../components/experience/exp-mobile-timelines/exp-mobile-timelines.component';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [CommonModule, ExpHeaderComponent, ExpTechnologiesComponent, ExpTimelinesComponent, ExpMobileTimelinesComponent],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss',
+    selector: 'app-experience',
+    imports: [CommonModule, ExpHeaderComponent, ExpTechnologiesComponent, ExpTimelinesComponent, ExpMobileTimelinesComponent],
+    templateUrl: './experience.component.html',
+    styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
   experience: ITimelineData[];

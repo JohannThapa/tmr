@@ -4,11 +4,10 @@ import { Chart, registerables } from 'chart.js';
 import { IWeather } from 'src/app/core/models/weather.model';
 
 @Component({
-  selector: 'app-weather-charts',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './weather-charts.component.html',
-  styleUrl: './weather-charts.component.scss',
+    selector: 'app-weather-charts',
+    imports: [CommonModule],
+    templateUrl: './weather-charts.component.html',
+    styleUrl: './weather-charts.component.scss'
 })
 export class WeatherChartsComponent implements AfterViewInit {
   @ViewChild('lineChart') lineChart!: ElementRef;

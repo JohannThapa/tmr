@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-idx-header',
-  standalone: true,
-  imports: [NgIf],
-  templateUrl: './idx-header.component.html',
+    selector: 'app-idx-header',
+    imports: [NgIf],
+    templateUrl: './idx-header.component.html'
 })
 export class IdxHeaderComponent {
   public env = environment;

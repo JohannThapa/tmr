@@ -5,11 +5,10 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 import { NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'div[tmr-navbar-submenu]',
-  templateUrl: './navbar-submenu.component.html',
-  styleUrls: ['./navbar-submenu.component.scss'],
-  standalone: true,
-  imports: [NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, NgIf, AngularSvgIconModule],
+    selector: 'div[tmr-navbar-submenu]',
+    templateUrl: './navbar-submenu.component.html',
+    styleUrls: ['./navbar-submenu.component.scss'],
+    imports: [NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, NgIf, AngularSvgIconModule]
 })
 export class NavbarSubmenuComponent implements AfterViewInit {
   @Input() public submenu = <SubMenuItem[]>{};

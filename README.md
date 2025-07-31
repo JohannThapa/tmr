@@ -120,4 +120,6 @@ To run prettier, run the following command
 
 
 
+    "ng-apexcharts": "^1.7.1",
+    "apexcharts": "^3.35.3",
 

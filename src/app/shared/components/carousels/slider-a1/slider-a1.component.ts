@@ -7,11 +7,10 @@ import { PrjModalComponent } from 'src/app/modules/dashboard/components/projects
 import { InfoCardComponent } from '../../cards/info-card/info-card.component';
 
 @Component({
-  selector: 'tmr-slider-a1',
-  standalone: true,
-  imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component, PrjModalComponent, InfoCardComponent],
-  templateUrl: './slider-a1.component.html',
-  styleUrl: './slider-a1.component.scss',
+    selector: 'tmr-slider-a1',
+    imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component, PrjModalComponent, InfoCardComponent],
+    templateUrl: './slider-a1.component.html',
+    styleUrl: './slider-a1.component.scss'
 })
 export class SliderA1Component implements AfterViewInit {
   @ViewChild('slider', { static: true }) slider!: ElementRef;

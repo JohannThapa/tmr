@@ -4,11 +4,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
-  selector: 'app-toggle-menu',
-  standalone: true,
-  imports: [NgClass, AngularSvgIconModule],
-  templateUrl: './toggle-menu.component.html',
-  styleUrls: ['./toggle-menu.component.scss'],
+    selector: 'app-toggle-menu',
+    imports: [NgClass, AngularSvgIconModule],
+    templateUrl: './toggle-menu.component.html',
+    styleUrls: ['./toggle-menu.component.scss']
 })
 export class ToggleMenuComponent implements OnInit {
   public currentMode: string;

@@ -2,11 +2,10 @@ import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'tmr-info-card',
-  standalone: true,
-  imports: [NgFor],
-  templateUrl: './info-card.component.html',
-  styleUrl: './info-card.component.scss',
+    selector: 'tmr-info-card',
+    imports: [NgFor],
+    templateUrl: './info-card.component.html',
+    styleUrl: './info-card.component.scss'
 })
 export class InfoCardComponent {
   @Input() projectTitle: string = 'THE';

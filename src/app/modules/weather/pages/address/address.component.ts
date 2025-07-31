@@ -13,22 +13,21 @@ import { GeocodeService } from 'src/app/core/services/geocode.service';
 import { IGeocode } from 'src/app/core/models/geocode.mode';
 
 @Component({
-  selector: 'app-address',
-  standalone: true,
-  imports: [
-    FormsModule,
-    NgClass,
-    CommonModule,
-    ReactiveFormsModule,
-    RouterLink,
-    AngularSvgIconModule,
-    ButtonComponent,
-    CodeComponent,
-    WeatherModalComponent,
-  ],
-  providers: [GeocodeService, WeatherService, SvgIconRegistryService],
-  templateUrl: './address.component.html',
-  styleUrl: './address.component.scss',
+    selector: 'app-address',
+    imports: [
+        FormsModule,
+        NgClass,
+        CommonModule,
+        ReactiveFormsModule,
+        RouterLink,
+        AngularSvgIconModule,
+        ButtonComponent,
+        CodeComponent,
+        WeatherModalComponent,
+    ],
+    providers: [GeocodeService, WeatherService, SvgIconRegistryService],
+    templateUrl: './address.component.html',
+    styleUrl: './address.component.scss'
 })
 export class AddressComponent implements OnDestroy {
   addressForm: FormGroup;

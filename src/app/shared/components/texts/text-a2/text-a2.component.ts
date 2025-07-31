@@ -8,10 +8,9 @@ import { IStack } from 'src/app/core/models/tech-stacks.model';
 import { ButtonA2Component } from '../../animations/button-a2/button-a2.component';
 
 @Component({
-  selector: '[tmr-text-a2]',
-  standalone: true,
-  imports: [CommonModule, NgClass, NgStyle, ButtonA1Component, ButtonA2Component],
-  template: `
+    selector: '[tmr-text-a2]',
+    imports: [CommonModule, NgClass, NgStyle, ButtonA1Component, ButtonA2Component],
+    template: `
     <div id="container" class="text-foreground text-2xl font-bold text-center">
       <div class=" flex h-auto items-center justify-center">
         <p class="text-shadow-light">A</p>
@@ -39,7 +38,7 @@ import { ButtonA2Component } from '../../animations/button-a2/button-a2.componen
         routerLink="/skills"
         (buttonClick)="handleButtonClick()"></div>
     </div>
-  `,
+  `
 })
 export class TextA2Component implements OnInit, OnDestroy {
   @Input() skills: string[] = TECH_SKILLS;

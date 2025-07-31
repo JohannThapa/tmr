@@ -12,19 +12,18 @@ import { ISingleCardImage, ISize } from '../../../models/single-card';
 import { hslToHexColor } from 'src/app/shared/utils/colors';
 
 @Component({
-  selector: '[tmr-bitcoin-chart-card]',
-  standalone: true,
-  imports: [
-    CommonModule,
-    AngularSvgIconModule,
-    NgApexchartsModule,
-    NgFor,
-    CurrencyPipe,
-    NgClass,
-    SingleLoaderComponent,
-  ],
-  templateUrl: './bitcoin-chart-card.component.html',
-  styleUrls: ['./bitcoin-chart-card.component.scss'],
+    selector: '[tmr-bitcoin-chart-card]',
+    imports: [
+        CommonModule,
+        AngularSvgIconModule,
+        NgApexchartsModule,
+        NgFor,
+        CurrencyPipe,
+        NgClass,
+        SingleLoaderComponent,
+    ],
+    templateUrl: './bitcoin-chart-card.component.html',
+    styleUrls: ['./bitcoin-chart-card.component.scss']
 })
 export class BitcoinChartCardComponent implements OnInit, OnDestroy {
   @Input() container: ISize = {

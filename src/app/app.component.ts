@@ -6,11 +6,10 @@ import { ResponsiveHelperComponent } from './shared/components/responsive-helper
 import { NgxSonnerToaster } from 'ngx-sonner';
 import { ApolloModule } from 'apollo-angular';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  standalone: true,
-  imports: [NgClass, RouterOutlet, ApolloModule, ResponsiveHelperComponent, NgxSonnerToaster],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [NgClass, RouterOutlet, ApolloModule, ResponsiveHelperComponent, NgxSonnerToaster]
 })
 export class AppComponent {
   title = 'TMR';

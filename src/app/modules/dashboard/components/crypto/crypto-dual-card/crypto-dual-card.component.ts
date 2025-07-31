@@ -5,10 +5,9 @@ import { IAvgFeeBitcoin } from '../../../models/crypto';
 import { IDualCardStyle } from '../../../models/single-card';
 
 @Component({
-  selector: '[tmr-crypto-dual-card]',
-  templateUrl: './crypto-dual-card.component.html',
-  standalone: true,
-  imports: [CommonModule, NgStyle, NgIf, CurrencyPipe, AngularSvgIconModule],
+    selector: '[tmr-crypto-dual-card]',
+    templateUrl: './crypto-dual-card.component.html',
+    imports: [CommonModule, NgStyle, NgIf, CurrencyPipe, AngularSvgIconModule]
 })
 export class CryptoDualCardComponent {
   @Input() avg: IAvgFeeBitcoin = <IAvgFeeBitcoin>{};

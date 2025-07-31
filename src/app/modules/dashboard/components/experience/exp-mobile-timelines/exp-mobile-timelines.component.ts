@@ -6,11 +6,10 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'tmr-exp-mobile-timelines',
-  standalone: true,
-  imports: [CommonModule, DatePipe],
-  templateUrl: './exp-mobile-timelines.component.html',
-  styleUrl: './exp-mobile-timelines.component.scss'
+    selector: 'tmr-exp-mobile-timelines',
+    imports: [CommonModule, DatePipe],
+    templateUrl: './exp-mobile-timelines.component.html',
+    styleUrl: './exp-mobile-timelines.component.scss'
 })
 export class ExpMobileTimelinesComponent{
   experienceData: ITimelineData[] = EXPERIENCE;

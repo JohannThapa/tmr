@@ -4,11 +4,10 @@ import { SOCIAL_LINKS } from 'src/app/core/constants/social-links';
 import { ISocials } from 'src/app/shared/models/socials';
 
 @Component({
-  selector: 'tmr-social-button',
-  standalone: true,
-  imports: [NgFor, NgStyle],
-  templateUrl: './social-button.component.html',
-  styleUrl: './social-button.component.scss',
+    selector: 'tmr-social-button',
+    imports: [NgFor, NgStyle],
+    templateUrl: './social-button.component.html',
+    styleUrl: './social-button.component.scss'
 })
 export class SocialButtonComponent {
   @Input() isColor: boolean = false;

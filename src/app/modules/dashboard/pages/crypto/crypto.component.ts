@@ -20,21 +20,20 @@ import {
 } from '../../components/crypto';
 
 @Component({
-  selector: 'app-crypto',
-  templateUrl: './crypto.component.html',
-  standalone: true,
-  imports: [
-    CommonModule,
-    CryptoHeaderComponent,
-    CryptoDualCardComponent,
-    CryptoSingleCardComponent,
-    CryptoChartCardComponent,
-    CryptoTransactionTableComponent,
-    CryptoSingleCardComponent,
-    BitcoinChartCardComponent,
-    SingleLoaderComponent,
-    DualLoaderComponent,
-  ],
+    selector: 'app-crypto',
+    templateUrl: './crypto.component.html',
+    imports: [
+        CommonModule,
+        CryptoHeaderComponent,
+        CryptoDualCardComponent,
+        CryptoSingleCardComponent,
+        CryptoChartCardComponent,
+        CryptoTransactionTableComponent,
+        CryptoSingleCardComponent,
+        BitcoinChartCardComponent,
+        SingleLoaderComponent,
+        DualLoaderComponent,
+    ]
 })
 export class CryptoComponent implements OnInit, OnDestroy {
   cryptoData$!: Observable<AugmentedBlockchainData>;

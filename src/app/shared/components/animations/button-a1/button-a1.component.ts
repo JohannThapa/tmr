@@ -3,10 +3,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BorderType } from 'src/app/core/types/border-type';
 
 @Component({
-  selector: '[tmr-button-a1]',
-  standalone: true,
-  imports: [CommonModule, NgClass],
-  template: `
+    selector: '[tmr-button-a1]',
+    imports: [CommonModule, NgClass],
+    template: `
     <div class="flex justify-center mt-14 items-center">
       <button
         class="relative w-24 h-24 text-center text-xs uppercase font-bold tracking-widest"
@@ -25,7 +24,7 @@ import { BorderType } from 'src/app/core/types/border-type';
       </button>
     </div>
   `,
-  styleUrl: './button-a1.component.scss',
+    styleUrl: './button-a1.component.scss'
 })
 export class ButtonA1Component {
   @Input() text: string = 'More';

@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-code',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './code.component.html',
-  styleUrl: './code.component.scss',
+    selector: 'app-code',
+    imports: [CommonModule],
+    templateUrl: './code.component.html',
+    styleUrl: './code.component.scss'
 })
 export class CodeComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

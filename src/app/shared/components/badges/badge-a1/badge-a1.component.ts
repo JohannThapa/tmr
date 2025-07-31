@@ -3,10 +3,9 @@ import { Component, Input } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: 'tmr-badge-a1',
-  standalone: true,
-  imports: [AngularSvgIconModule, NgClass],
-  template: `
+    selector: 'tmr-badge-a1',
+    imports: [AngularSvgIconModule, NgClass],
+    template: `
     <span [ngClass]="badgeClasses">
       <svg-icon [src]="icon" [svgClass]="'h-4 w-4 text-foreground'"></svg-icon>
       <span class="ml-1">
@@ -14,11 +13,11 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
       </span>
     </span>
   `,
-  styles: `
+    styles: `
   :host {
     display: inline-block;
   }
-  `,
+  `
 })
 export class BadgeA1Component {
   @Input() text: string = 'Default Badge';

@@ -4,10 +4,9 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { BorderType } from 'src/app/core/types/border-type';
 
 @Component({
-  selector: '[tmr-button-a2]',
-  standalone: true,
-  imports: [NgClass, NgFor, RouterLinkActive, RouterLink],
-  template: `
+    selector: '[tmr-button-a2]',
+    imports: [NgClass, NgFor, RouterLinkActive, RouterLink],
+    template: `
     <section class="gooey-section">
       <svg class="absolute -top-[4000px] -left-[4000px]" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
@@ -44,7 +43,7 @@ import { BorderType } from 'src/app/core/types/border-type';
         </span>
       </button>
     </section>
-  `,
+  `
 })
 export class ButtonA2Component {
   @Input() text: string = 'More';

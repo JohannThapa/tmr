@@ -10,33 +10,26 @@ import { BgtxtPipe } from 'src/app/shared/pipes/bgtxt.pipe';
 
 const BASE_COLOR = COLORS[0].code;
 @Component({
-  selector: 'app-color-menu',
-  standalone: true,
-  imports: [ClickOutsideDirective, NgClass, RouterLink, AngularSvgIconModule, BgtxtPipe],
-  templateUrl: './color-menu.component.html',
-  styleUrl: './color-menu.component.scss',
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          opacity: 1,
-          transform: 'translateY(0)',
-          visibility: 'visible',
-        }),
-      ),
-      state(
-        'closed',
-        style({
-          opacity: 0,
-          transform: 'translateY(-20px)',
-          visibility: 'hidden',
-        }),
-      ),
-      transition('open => closed', [animate('0.2s')]),
-      transition('closed => open', [animate('0.2s')]),
-    ]),
-  ],
+    selector: 'app-color-menu',
+    imports: [ClickOutsideDirective, NgClass, RouterLink, AngularSvgIconModule, BgtxtPipe],
+    templateUrl: './color-menu.component.html',
+    styleUrl: './color-menu.component.scss',
+    animations: [
+        trigger('openClose', [
+            state('open', style({
+                opacity: 1,
+                transform: 'translateY(0)',
+                visibility: 'visible',
+            })),
+            state('closed', style({
+                opacity: 0,
+                transform: 'translateY(-20px)',
+                visibility: 'hidden',
+            })),
+            transition('open => closed', [animate('0.2s')]),
+            transition('closed => open', [animate('0.2s')]),
+        ]),
+    ]
 })
 export class ColorMenuComponent implements AfterViewInit {
   public isOpen = false;

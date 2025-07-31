@@ -10,20 +10,19 @@ import { ISingleCardStyle } from '../../../models/single-card';
 import { CryptoEnum } from 'src/app/core/enums/crypto.enum';
 
 @Component({
-  selector: '[tmr-single-card]',
-  standalone: true,
-  imports: [
-    CommonModule,
-    NgStyle,
-    CurrencyPipe,
-    DecimalPipe,
-    AngularSvgIconModule,
-    NgClass,
-    CscOutputTransactionComponent,
-    SingleLoaderComponent,
-  ],
-  templateUrl: './crypto-single-card.component.html',
-  styleUrl: './crypto-single-card.component.scss',
+    selector: '[tmr-single-card]',
+    imports: [
+        CommonModule,
+        NgStyle,
+        CurrencyPipe,
+        DecimalPipe,
+        AngularSvgIconModule,
+        NgClass,
+        CscOutputTransactionComponent,
+        SingleLoaderComponent,
+    ],
+    templateUrl: './crypto-single-card.component.html',
+    styleUrl: './crypto-single-card.component.scss'
 })
 export class CryptoSingleCardComponent {
   @Input() cryptoType!: CryptoType;

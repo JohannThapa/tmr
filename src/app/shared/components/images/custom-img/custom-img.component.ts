@@ -3,10 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { INgStyle } from 'src/app/core/models/angular-custom';
 
 @Component({
-  selector: 'tmr-custom-img',
-  standalone: true,
-  imports: [NgClass, NgStyle],
-  template: `
+    selector: 'tmr-custom-img',
+    imports: [NgClass, NgStyle],
+    template: `
     <img
       [ngClass]="computedClasses"
       [src]="src"
@@ -19,7 +18,7 @@ import { INgStyle } from 'src/app/core/models/angular-custom';
       [ngStyle]="computedStyles"
       (load)="onImageLoad($event)" />
   `,
-  styleUrl: './custom-img.component.scss',
+    styleUrl: './custom-img.component.scss'
 })
 export class CustomImgComponent implements OnInit {
   private _width = 300;

@@ -2,10 +2,9 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'tmr-simple-table-loader',
-  standalone: true,
-  imports: [NgFor],
-  template: `
+    selector: 'tmr-simple-table-loader',
+    imports: [NgFor],
+    template: `
     <div role="status" class="flex-col rounded-lg bg-background px-8 py-8 sm:flex-row animate-pulse">
       <!-- Header -->
       <div class="mb-4 flex items-center justify-between">
@@ -84,7 +83,7 @@ import { Component } from '@angular/core';
       <span class="sr-only">Loading...</span>
     </div>
   `,
-  styles: ``,
+    styles: ``
 })
 export class SimpleTableLoaderComponent {
   items = Array(5).fill(0);

@@ -6,11 +6,10 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 import { NgClass, NgFor, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'app-sidebar-submenu',
-  templateUrl: './sidebar-submenu.component.html',
-  styleUrls: ['./sidebar-submenu.component.scss'],
-  standalone: true,
-  imports: [NgClass, NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, AngularSvgIconModule],
+    selector: 'app-sidebar-submenu',
+    templateUrl: './sidebar-submenu.component.html',
+    styleUrls: ['./sidebar-submenu.component.scss'],
+    imports: [NgClass, NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, AngularSvgIconModule]
 })
 export class SidebarSubmenuComponent {
   @Input() public submenu = <SubMenuItem>{};

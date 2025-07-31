@@ -4,13 +4,12 @@ import { Theme } from 'src/app/core/models/theme.model';
 import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
-  selector: '[tmr-bg-l1]',
-  standalone: true,
-  imports: [],
-  template: `<div class="relative w-full -mt-4">
+    selector: '[tmr-bg-l1]',
+    imports: [],
+    template: `<div class="relative w-full -mt-4">
     <ng-content></ng-content>
   </div> `,
-  styleUrl: './bg-l1.component.scss',
+    styleUrl: './bg-l1.component.scss'
 })
 export class BgL1Component implements OnInit, OnDestroy {
   @Input() light: string = `/assets/bg/top.jpg`;

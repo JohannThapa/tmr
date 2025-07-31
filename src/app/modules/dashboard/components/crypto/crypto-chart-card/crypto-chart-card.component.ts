@@ -5,10 +5,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: '[tmr-crypto-chart-card]',
-  templateUrl: './crypto-chart-card.component.html',
-  standalone: true,
-  imports: [AngularSvgIconModule, NgApexchartsModule],
+    selector: '[tmr-crypto-chart-card]',
+    templateUrl: './crypto-chart-card.component.html',
+    imports: [AngularSvgIconModule, NgApexchartsModule]
 })
 export class CryptoChartCardComponent {
   public chartOptions: Partial<ChartOptions>;
@@ -90,7 +89,7 @@ export class CryptoChartCardComponent {
       tooltip: {
         theme: 'light',
         y: {
-          formatter: function (val) {
+          formatter: function (val: string) {
             return val + '$';
           },
         },
