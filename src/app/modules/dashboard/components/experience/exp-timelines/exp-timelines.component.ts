@@ -8,10 +8,10 @@ import { calculateDuration } from 'src/app/shared/utils/date';
 import { EXPERIENCE } from '../../../pages/experience/data/experience';
 
 @Component({
-    selector: 'tmr-exp-timelines',
-    imports: [NgFor, DatePipe, AngularSvgIconModule, BadgeA1Component],
-    templateUrl: './exp-timelines.component.html',
-    styleUrl: './exp-timelines.component.scss'
+  selector: 'tmr-exp-timelines',
+  imports: [NgFor, DatePipe, AngularSvgIconModule, BadgeA1Component],
+  templateUrl: './exp-timelines.component.html',
+  styleUrl: './exp-timelines.component.scss',
 })
 export class ExpTimelinesComponent implements AfterViewInit {
   @Input() timelineData: ITimelineData[] = EXPERIENCE;

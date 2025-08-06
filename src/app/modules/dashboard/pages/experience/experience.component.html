@@ -1,26 +1,25 @@
 <!-- eslint-disable @angular-eslint/template/alt-text -->
-<div class="lg:p-12 p-4">
+<div class="p-4 lg:p-12">
   <!-- Header -->
   <tmr-exp-header></tmr-exp-header>
 
   <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
     <div class="lg:col-span-3 xl:col-span-4">
-      <div class="p-0 sm:p-4 lg:p-10 bg-background">
-        <div class="lg:flex mt-10 text-center ml-10 mr-10 lg:ml-36 lg:mr-36 pt-4">
+      <div class="bg-background p-0 sm:p-4 lg:p-10">
+        <div class="ml-10 mr-10 mt-10 pt-4 text-center lg:ml-36 lg:mr-36 lg:flex">
           <div class="lg:mr-20 lg:w-1/4">
-            <h1 class="font-bold italic mb-10">TECHNOLOGIES THAT I USED</h1>
+            <h1 class="mb-10 font-bold italic">TECHNOLOGIES THAT I USED</h1>
             <tmr-exp-technologies [tech]="technology"></tmr-exp-technologies>
           </div>
 
           <div class="lg:w-3/4">
-            <h1 class="font-bold italic mb-10">WORK TIMELINES</h1>
+            <h1 class="mb-10 font-bold italic">WORK TIMELINES</h1>
             <div *ngIf="isDesktop$ | async; else isMobileTemplate">
               <tmr-exp-timelines [timelineData]="experience"></tmr-exp-timelines>
             </div>
             <ng-template #isMobileTemplate>
               <tmr-exp-mobile-timelines></tmr-exp-mobile-timelines>
             </ng-template>
-
           </div>
         </div>
       </div>

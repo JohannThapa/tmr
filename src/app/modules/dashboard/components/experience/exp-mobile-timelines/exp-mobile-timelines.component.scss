@@ -1,13 +1,13 @@
 .card::before {
   @apply border-primary;
-  content: "";
+  content: '';
   position: absolute;
   width: 50%;
   animation: flow 3s linear infinite;
 }
 
 .title::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 10px;
   height: 10px;
@@ -32,8 +32,6 @@
   right: -45px;
 }
 
-
-
 @keyframes flow {
   0% {
     background-position: 0% 0%;
@@ -44,7 +42,7 @@
 }
 
 .card::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 50%;
   animation: flow 3s linear infinite;

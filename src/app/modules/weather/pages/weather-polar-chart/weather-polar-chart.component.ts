@@ -4,10 +4,10 @@ import { Chart, registerables } from 'chart.js';
 import { IWeather } from 'src/app/core/models/weather.model';
 
 @Component({
-    selector: 'app-weather-polar-chart',
-    imports: [CommonModule],
-    templateUrl: './weather-polar-chart.component.html',
-    styleUrl: './weather-polar-chart.component.scss'
+  selector: 'app-weather-polar-chart',
+  imports: [CommonModule],
+  templateUrl: './weather-polar-chart.component.html',
+  styleUrl: './weather-polar-chart.component.scss',
 })
 export class WeatherPolarChartComponent implements AfterViewInit {
   @ViewChild('polarChart') polarChart!: ElementRef;

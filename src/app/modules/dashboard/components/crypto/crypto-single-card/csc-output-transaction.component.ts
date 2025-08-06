@@ -3,9 +3,9 @@ import { Component, Input } from '@angular/core';
 import { IBitcoinOutput, IEthereumTransaction, ISolanaTransaction } from 'src/app/core/models/blockchain';
 
 @Component({
-    selector: 'tmr-csc-output-transaction',
-    imports: [CommonModule, CurrencyPipe, DecimalPipe],
-    template: `
+  selector: 'tmr-csc-output-transaction',
+  imports: [CommonModule, CurrencyPipe, DecimalPipe],
+  template: `
     <!-- Bitcoin transaction -->
     <ng-container *ngIf="isBitcoin; else transactionTemplate">
       <div class="flex items-end justify-between text-sm font-semibold text-muted-foreground">
@@ -65,7 +65,7 @@ import { IBitcoinOutput, IEthereumTransaction, ISolanaTransaction } from 'src/ap
     </ng-template>
     <!-- End Solana transaction -->
   `,
-    styles: ``
+  styles: ``,
 })
 export class CscOutputTransactionComponent {
   @Input() output?: IBitcoinOutput | null;

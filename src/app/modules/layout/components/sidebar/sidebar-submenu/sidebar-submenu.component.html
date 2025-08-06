@@ -1,5 +1,5 @@
 <div
-  class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
+  class="max-h-0 overflow-hidden pl-4 pt-1 transition-all duration-500"
   [ngClass]="{ hidden: !menuService.showSideBar, 'max-h-screen': submenu.expanded }">
   <ul class="flex flex-col border-l border-dashed border-border pl-2 text-muted-foreground">
     <li *ngFor="let sub of submenu.children">

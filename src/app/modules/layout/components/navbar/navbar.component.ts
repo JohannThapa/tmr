@@ -8,17 +8,17 @@ import { ColorMenuComponent } from './color-menu/color-menu.component';
 import { ToggleMenuComponent } from './toggle-menu/toggle-menu.component';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss'],
-    imports: [
-        AngularSvgIconModule,
-        NavbarMenuComponent,
-        ProfileMenuComponent,
-        ColorMenuComponent,
-        NavbarMobileComponent,
-        ToggleMenuComponent,
-    ]
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
+  imports: [
+    AngularSvgIconModule,
+    NavbarMenuComponent,
+    ProfileMenuComponent,
+    ColorMenuComponent,
+    NavbarMobileComponent,
+    ToggleMenuComponent,
+  ],
 })
 export class NavbarComponent {
   constructor(private menuService: MenuService) {}

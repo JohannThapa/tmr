@@ -1,10 +1,10 @@
-<div class="flex min-h-[420px] flex-col rounded-lg bg-background p-8 sm:flex-row z-50" *ngIf="weather">
+<div class="z-50 flex min-h-[420px] flex-col rounded-lg bg-background p-8 sm:flex-row" *ngIf="weather">
   <svg-icon
-    class="w-full min-h-[240px] hover:text-muted-foreground text-primary flex-1 cursor-pointer rounded-md object-cover transition duration-150 ease-in-out hover:opacity-75"
+    class="min-h-[240px] w-full flex-1 cursor-pointer rounded-md object-cover text-primary transition duration-150 ease-in-out hover:text-muted-foreground hover:opacity-75"
     src="./assets/icons/working.svg">
   </svg-icon>
 
-  <div class="mt-4 bg-background flex flex-1 flex-col justify-between space-y-2 sm:ml-6 md:mt-0">
+  <div class="mt-4 flex flex-1 flex-col justify-between space-y-2 bg-background sm:ml-6 md:mt-0">
     <div>
       <small class="font-semibold text-muted-foreground">ID: {{ weather.id }}</small>
       <h2 class="text-2xl font-semibold text-foreground">{{ weather.name }}</h2>

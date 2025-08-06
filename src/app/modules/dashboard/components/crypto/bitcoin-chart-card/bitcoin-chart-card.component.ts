@@ -4,7 +4,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
 import { ThemeService } from 'src/app/core/services/theme.service';
-import { CommonModule, CurrencyPipe, NgClass, NgFor } from '@angular/common';
+import { CommonModule, NgClass, NgFor } from '@angular/common';
 import { BitqueryService } from 'src/app/core/services/bitquery.service';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { SingleLoaderComponent } from 'src/app/shared/loaders/cards/single-loader/single-loader.component';
@@ -12,18 +12,10 @@ import { ISingleCardImage, ISize } from '../../../models/single-card';
 import { hslToHexColor } from 'src/app/shared/utils/colors';
 
 @Component({
-    selector: '[tmr-bitcoin-chart-card]',
-    imports: [
-        CommonModule,
-        AngularSvgIconModule,
-        NgApexchartsModule,
-        NgFor,
-        CurrencyPipe,
-        NgClass,
-        SingleLoaderComponent,
-    ],
-    templateUrl: './bitcoin-chart-card.component.html',
-    styleUrls: ['./bitcoin-chart-card.component.scss']
+  selector: '[tmr-bitcoin-chart-card]',
+  imports: [CommonModule, AngularSvgIconModule, NgApexchartsModule, NgFor, NgClass, SingleLoaderComponent],
+  templateUrl: './bitcoin-chart-card.component.html',
+  styleUrls: ['./bitcoin-chart-card.component.scss'],
 })
 export class BitcoinChartCardComponent implements OnInit, OnDestroy {
   @Input() container: ISize = {

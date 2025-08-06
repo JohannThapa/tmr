@@ -1,28 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CommonModule, CurrencyPipe, DecimalPipe, NgClass, NgStyle } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AugmentedBlockchainData, IEthereumTransaction, ISolanaTransaction } from 'src/app/core/models/blockchain';
 import { CryptoType } from 'src/app/core/types/crypto-type';
 import { CscOutputTransactionComponent } from './csc-output-transaction.component';
-import { SingleLoaderComponent } from 'src/app/shared/loaders/cards/single-loader/single-loader.component';
 import { ISingleCardStyle } from '../../../models/single-card';
 import { CryptoEnum } from 'src/app/core/enums/crypto.enum';
 
 @Component({
-    selector: '[tmr-single-card]',
-    imports: [
-        CommonModule,
-        NgStyle,
-        CurrencyPipe,
-        DecimalPipe,
-        AngularSvgIconModule,
-        NgClass,
-        CscOutputTransactionComponent,
-        SingleLoaderComponent,
-    ],
-    templateUrl: './crypto-single-card.component.html',
-    styleUrl: './crypto-single-card.component.scss'
+  selector: '[tmr-single-card]',
+  imports: [CommonModule, NgStyle, AngularSvgIconModule, CscOutputTransactionComponent],
+  templateUrl: './crypto-single-card.component.html',
+  styleUrl: './crypto-single-card.component.scss',
 })
 export class CryptoSingleCardComponent {
   @Input() cryptoType!: CryptoType;

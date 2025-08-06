@@ -1,17 +1,16 @@
-import { CommonModule, NgClass, NgStyle } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { interval, map, Subject, takeUntil } from 'rxjs';
 import { TECH_SKILLS, TECH_STACKS } from 'src/app/core/constants/tech-stacks';
-import { ButtonA1Component } from '../../animations/button-a1/button-a1.component';
 import { BorderType } from 'src/app/core/types/border-type';
 import { IStack } from 'src/app/core/models/tech-stacks.model';
 import { ButtonA2Component } from '../../animations/button-a2/button-a2.component';
 
 @Component({
-    selector: '[tmr-text-a2]',
-    imports: [CommonModule, NgClass, NgStyle, ButtonA1Component, ButtonA2Component],
-    template: `
-    <div id="container" class="text-foreground text-2xl font-bold text-center">
+  selector: '[tmr-text-a2]',
+  imports: [CommonModule, NgClass, ButtonA2Component],
+  template: `
+    <div id="container" class="text-center text-2xl font-bold text-foreground">
       <div class=" flex h-auto items-center justify-center">
         <p class="text-shadow-light">A</p>
         <div id="flip" class="h-[45px] w-auto overflow-hidden">
@@ -19,7 +18,7 @@ import { ButtonA2Component } from '../../animations/button-a2/button-a2.componen
             <div *ngFor="let item of skills">
               <div
                 [ngClass]="item === 'Full-stack Developer' ? 'bg-background text-primary' : 'bg-primary text-white'"
-                class="py-1 px-2 h-[45px] mb-[45px] inline-block">
+                class="mb-[45px] inline-block h-[45px] px-2 py-1">
                 {{ item }}
               </div>
             </div>
@@ -38,7 +37,7 @@ import { ButtonA2Component } from '../../animations/button-a2/button-a2.componen
         routerLink="/skills"
         (buttonClick)="handleButtonClick()"></div>
     </div>
-  `
+  `,
 })
 export class TextA2Component implements OnInit, OnDestroy {
   @Input() skills: string[] = TECH_SKILLS;
@@ -54,10 +53,10 @@ export class TextA2Component implements OnInit, OnDestroy {
   ngOnInit(): void {
     interval(1300)
       .pipe(
-        map((i) => this.stacks[i % this.stacks.length]),
+        map((i: number) => this.stacks[i % this.stacks.length]),
         takeUntil(this.destroy$),
       )
-      .subscribe((stack) => {
+      .subscribe((stack: IStack) => {
         this.currentStack = stack.name;
       });
   }

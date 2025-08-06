@@ -1,5 +1,5 @@
 .social a {
-  @apply opacity-0 scale-0 transition-all duration-[700ms];
+  @apply scale-0 opacity-0 transition-all duration-[700ms];
   &:hover {
     @apply text-yellow-400;
     transition-timing-function: ease-in-out !important;
@@ -13,5 +13,5 @@
 }
 
 .main:hover .btn {
-  @apply transform translate-x-[-500px];
+  @apply translate-x-[-500px] transform;
 }

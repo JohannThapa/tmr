@@ -1,7 +1,7 @@
 <ng-container *ngIf="cryptoData">
   <div class="flex flex-col rounded-lg bg-background p-8" [ngStyle]="{ height: cardStyle.container.height }">
     <svg-icon
-      class="h-full max-h-full w-full hover:text-muted-foreground cursor-pointer text-primary rounded-md object-cover transition duration-150 ease-in-out hover:opacity-75"
+      class="h-full max-h-full w-full cursor-pointer rounded-md object-cover text-primary transition duration-150 ease-in-out hover:text-muted-foreground hover:opacity-75"
       [src]="cryptoType === crypto.Ethereum ? cryptoData.ethereum.image || '' : cryptoData.solana.image || ''">
     </svg-icon>
     <h2 class="text-md mt-6 font-semibold text-foreground">

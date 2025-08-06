@@ -1,28 +1,28 @@
 import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
-    selector: '[tmr-bg-a1]',
-    imports: [],
-    template: `
-    <div class="absolute inset-0 overflow-hidden bg-transparent z-0">
-      <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full opacity-30 mix-blend-soft-light">
+  selector: '[tmr-bg-a1]',
+  imports: [],
+  template: `
+    <div class="absolute inset-0 z-0 overflow-hidden bg-transparent">
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-full w-full opacity-30 mix-blend-soft-light">
         <filter id="noiseFilterBg">
           <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
         </filter>
         <rect width="100%" height="100%" preserveAspectRatio="xMidYMid meet" filter="url(#noiseFilterBg)" />
       </svg>
-      <div class="relative w-full h-full blur-3xl">
-        <div class="g1 absolute bg-radial w-[80%] h-[80%] left-1/2 top-1/2 animate-move-vertical"></div>
-        <div class="g2 absolute bg-radial w-[80%] h-[80%] left-1/2 top-1/2 animate-move-circle reverse"></div>
-        <div class="g3 absolute bg-radial w-[80%] h-[80%] left-1/2 top-[calc(50%+200px)] animate-move-circle"></div>
-        <div class="g4 absolute bg-radial w-[80%] h-[80%] left-1/2 top-1/2 animate-move-horizontal"></div>
-        <div class="g5 absolute bg-radial w-[calc(80%*2)] h-[calc(80%*2)] left-1/2 top-1/2 animate-move-circle"></div>
-        <div class="interactive absolute bg-radial w-full h-full top-[-50%] left-[-50%] mix-blend-hard-light"></div>
+      <div class="relative h-full w-full blur-3xl">
+        <div class="g1 animate-move-vertical absolute left-1/2 top-1/2 h-[80%] w-[80%] bg-radial"></div>
+        <div class="g2 animate-move-circle reverse absolute left-1/2 top-1/2 h-[80%] w-[80%] bg-radial"></div>
+        <div class="g3 animate-move-circle absolute left-1/2 top-[calc(50%+200px)] h-[80%] w-[80%] bg-radial"></div>
+        <div class="g4 animate-move-horizontal absolute left-1/2 top-1/2 h-[80%] w-[80%] bg-radial"></div>
+        <div class="g5 animate-move-circle absolute left-1/2 top-1/2 h-[calc(80%*2)] w-[calc(80%*2)] bg-radial"></div>
+        <div class="interactive absolute left-[-50%] top-[-50%] h-full w-full bg-radial mix-blend-hard-light"></div>
       </div>
     </div>
     <ng-content></ng-content>
   `,
-    styleUrl: './bg-a1.component.scss'
+  styleUrl: './bg-a1.component.scss',
 })
 export class BgA1Component implements AfterViewInit {
   constructor() {}

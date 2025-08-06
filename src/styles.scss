@@ -2,7 +2,9 @@
 @import "./assets/styles/scss";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss/utilities";/** Plugins **/
+@import "./assets/styles/apexchart.scss";
+
 
 @layer base {
   @font-face {
@@ -287,5 +289,3 @@
   }
 }
 
-/** Plugins **/
-@import "./assets/styles/apexchart.scss";

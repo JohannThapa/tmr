@@ -3,10 +3,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { InfoCardComponent } from 'src/app/shared/components/cards/info-card/info-card.component';
 
 @Component({
-    selector: 'app-prj-modal',
-    imports: [InfoCardComponent, NgIf],
-    templateUrl: './prj-modal.component.html',
-    styleUrl: './prj-modal.component.scss'
+  selector: 'app-prj-modal',
+  imports: [InfoCardComponent, NgIf],
+  templateUrl: './prj-modal.component.html',
+  styleUrl: './prj-modal.component.scss',
 })
 export class PrjModalComponent {
   @Input() isVisible: boolean = false;

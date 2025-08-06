@@ -53,14 +53,14 @@
         <button
           *ngIf="item.children"
           [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': item.expanded }"
-          class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-muted-foreground/50 transition-all duration-500">
+          class="pointer-events-none absolute right-0 top-1 flex items-center p-1 text-muted-foreground/50 transition-all duration-500">
           <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
         </button>
 
         <!-- Tooltip -->
         <div class="fixed w-full" *ngIf="!menuService.showSideBar">
           <span
-            class="z-1 absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-foreground p-2 text-xs font-bold text-background shadow-md transition-all duration-200 group-hover:scale-100">
+            class="z-1 absolute -top-[34px] left-14 w-auto min-w-max origin-left scale-0 rounded-md bg-foreground p-2 text-xs font-bold text-background shadow-md transition-all duration-200 group-hover:scale-100">
             {{ item.label }}
           </span>
         </div>

@@ -13,24 +13,22 @@ import { ResponsiveService } from 'src/app/core/services/responsive.service';
 import { IdxMobileComponent } from '../../components/index/idx-mobile/idx-mobile.component';
 import { ISocials } from 'src/app/shared/models/socials';
 import { SOCIAL_LINKS } from 'src/app/core/constants/social-links';
-import { CursorCreatureComponent } from 'src/app/shared/components/animations/cursor-creature/cursor-creature.component';
 
 @Component({
-    selector: 'app-index',
-    imports: [
-        CommonModule,
-        BgA1Component,
-        BgL1Component,
-        IdxHeaderComponent,
-        TextA1Component,
-        TextA2Component,
-        BubbleCardComponent,
-        CustomImgComponent,
-        IdxMobileComponent,
-        CursorCreatureComponent
-    ],
-    templateUrl: './index.component.html',
-    styleUrl: './index.component.scss'
+  selector: 'app-index',
+  imports: [
+    CommonModule,
+    BgA1Component,
+    BgL1Component,
+    IdxHeaderComponent,
+    TextA1Component,
+    TextA2Component,
+    BubbleCardComponent,
+    CustomImgComponent,
+    IdxMobileComponent,
+  ],
+  templateUrl: './index.component.html',
+  styleUrl: './index.component.scss',
 })
 export class IndexComponent {
   skillSet: string[] = TECH_SKILLS;

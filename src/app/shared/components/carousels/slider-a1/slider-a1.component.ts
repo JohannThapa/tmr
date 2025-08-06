@@ -4,13 +4,12 @@ import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@ang
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonA2Component } from '../../animations/button-a2/button-a2.component';
 import { PrjModalComponent } from 'src/app/modules/dashboard/components/projects/prj-modal/prj-modal.component';
-import { InfoCardComponent } from '../../cards/info-card/info-card.component';
 
 @Component({
-    selector: 'tmr-slider-a1',
-    imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component, PrjModalComponent, InfoCardComponent],
-    templateUrl: './slider-a1.component.html',
-    styleUrl: './slider-a1.component.scss'
+  selector: 'tmr-slider-a1',
+  imports: [NgFor, NgStyle, AngularSvgIconModule, ButtonA2Component, PrjModalComponent],
+  templateUrl: './slider-a1.component.html',
+  styleUrl: './slider-a1.component.scss',
 })
 export class SliderA1Component implements AfterViewInit {
   @ViewChild('slider', { static: true }) slider!: ElementRef;

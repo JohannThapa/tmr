@@ -1,7 +1,7 @@
-<div class="bg-gray-800 text-white p-4 rounded-md relative w-full">
-  <div class="flex justify-between items-center mb-2">
-    <span class="text-sm text-primary text-semibold">{{ language.toUpperCase() }}</span>
-    <button class="text-xs text-primary hover:text-white transition flex items-center" (click)="copyToClipboard()">
+<div class="relative w-full rounded-md bg-gray-800 p-4 text-white">
+  <div class="mb-2 flex items-center justify-between">
+    <span class="text-semibold text-sm text-primary">{{ language.toUpperCase() }}</span>
+    <button class="flex items-center text-xs text-primary transition hover:text-white" (click)="copyToClipboard()">
       <span class="mr-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"

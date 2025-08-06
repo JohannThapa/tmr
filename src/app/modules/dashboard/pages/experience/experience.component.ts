@@ -11,20 +11,26 @@ import { CommonModule } from '@angular/common';
 import { ExpMobileTimelinesComponent } from '../../components/experience/exp-mobile-timelines/exp-mobile-timelines.component';
 
 @Component({
-    selector: 'app-experience',
-    imports: [CommonModule, ExpHeaderComponent, ExpTechnologiesComponent, ExpTimelinesComponent, ExpMobileTimelinesComponent],
-    templateUrl: './experience.component.html',
-    styleUrl: './experience.component.scss'
+  selector: 'app-experience',
+  imports: [
+    CommonModule,
+    ExpHeaderComponent,
+    ExpTechnologiesComponent,
+    ExpTimelinesComponent,
+    ExpMobileTimelinesComponent,
+  ],
+  templateUrl: './experience.component.html',
+  styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
   experience: ITimelineData[];
   technology: ITechnology[];
 
-    isMobile$ = this.responsiveService.isMobile$;
-    isDesktop$ = this.responsiveService.isDesktop$;
+  isMobile$ = this.responsiveService.isMobile$;
+  isDesktop$ = this.responsiveService.isDesktop$;
 
-    constructor(private responsiveService: ResponsiveService) {
-      this.experience = EXPERIENCE;
-      this.technology = TECHNOLOGIES;
-    }
+  constructor(private responsiveService: ResponsiveService) {
+    this.experience = EXPERIENCE;
+    this.technology = TECHNOLOGIES;
+  }
 }

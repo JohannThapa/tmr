@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: '[tmr-text-a1]',
-    imports: [CommonModule],
-    template: `
+  selector: '[tmr-text-a1]',
+  imports: [CommonModule],
+  template: `
     <div class="banner-text-zone text-white">
       <h1>
         <span *ngFor="let letter of text.split(''); let i = index" [ngClass]="generateClass(i)">
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
       </h1>
     </div>
   `,
-    styles: []
+  styles: [],
 })
 export class TextA1Component implements OnInit {
   @Input() text: string = '';

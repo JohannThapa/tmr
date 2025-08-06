@@ -7,15 +7,15 @@ import { WeatherPolarChartComponent } from '../weather-polar-chart/weather-polar
 import { WeatherInfoCardComponent } from 'src/app/shared/components/cards/weather-info-card/weather-info-card.component';
 
 @Component({
-    selector: 'app-weather-modal',
-    imports: [
-        CommonModule,
-        ChartHeaderComponent,
-        WeatherInfoCardComponent,
-        WeatherChartsComponent,
-        WeatherPolarChartComponent,
-    ],
-    templateUrl: './weather-modal.component.html'
+  selector: 'app-weather-modal',
+  imports: [
+    CommonModule,
+    ChartHeaderComponent,
+    WeatherInfoCardComponent,
+    WeatherChartsComponent,
+    WeatherPolarChartComponent,
+  ],
+  templateUrl: './weather-modal.component.html',
 })
 export class WeatherModalComponent {
   @Input() isVisible: boolean = false;

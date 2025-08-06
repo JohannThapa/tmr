@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { ISingleCardImage, ISize } from 'src/app/modules/dashboard/models/single-card';
 
 @Component({
-    selector: '[tmr-single-card-loader]',
-    imports: [],
-    templateUrl: './single-loader.component.html',
-    styleUrl: './single-loader.component.scss'
+  selector: '[tmr-single-card-loader]',
+  imports: [],
+  templateUrl: './single-loader.component.html',
+  styleUrl: './single-loader.component.scss',
 })
 export class SingleLoaderComponent {
   @Input() container: ISize = {

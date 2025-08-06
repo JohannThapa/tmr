@@ -1,7 +1,6 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { AngularSvgIconModule, SvgIconRegistryService } from 'angular-svg-icon';
 import { ButtonComponent } from 'src/app/shared/components/button/button.component';
 import { CodeComponent } from 'src/app/shared/components/code/code.component';
@@ -13,21 +12,20 @@ import { GeocodeService } from 'src/app/core/services/geocode.service';
 import { IGeocode } from 'src/app/core/models/geocode.mode';
 
 @Component({
-    selector: 'app-address',
-    imports: [
-        FormsModule,
-        NgClass,
-        CommonModule,
-        ReactiveFormsModule,
-        RouterLink,
-        AngularSvgIconModule,
-        ButtonComponent,
-        CodeComponent,
-        WeatherModalComponent,
-    ],
-    providers: [GeocodeService, WeatherService, SvgIconRegistryService],
-    templateUrl: './address.component.html',
-    styleUrl: './address.component.scss'
+  selector: 'app-address',
+  imports: [
+    FormsModule,
+    NgClass,
+    CommonModule,
+    ReactiveFormsModule,
+    AngularSvgIconModule,
+    ButtonComponent,
+    CodeComponent,
+    WeatherModalComponent,
+  ],
+  providers: [GeocodeService, WeatherService, SvgIconRegistryService],
+  templateUrl: './address.component.html',
+  styleUrl: './address.component.scss',
 })
 export class AddressComponent implements OnDestroy {
   addressForm: FormGroup;

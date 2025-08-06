@@ -1,17 +1,17 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: '[tmr-bubble-card]',
-    imports: [NgClass, NgStyle],
-    template: `
+  selector: '[tmr-bubble-card]',
+  imports: [NgClass],
+  template: `
     <div [ngClass]="generateClass()">
       <div class="bubble-image">
         <ng-content></ng-content>
       </div>
     </div>
   `,
-    styleUrl: './bubble-card.component.scss'
+  styleUrl: './bubble-card.component.scss',
 })
 export class BubbleCardComponent {
   @Input() customClass?: string;

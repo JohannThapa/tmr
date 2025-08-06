@@ -3,12 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BorderType } from 'src/app/core/types/border-type';
 
 @Component({
-    selector: '[tmr-button-a1]',
-    imports: [CommonModule, NgClass],
-    template: `
-    <div class="flex justify-center mt-14 items-center">
+  selector: '[tmr-button-a1]',
+  imports: [CommonModule, NgClass],
+  template: `
+    <div class="mt-14 flex items-center justify-center">
       <button
-        class="relative w-24 h-24 text-center text-xs uppercase font-bold tracking-widest"
+        class="relative h-24 w-24 text-center text-xs font-bold uppercase tracking-widest"
         role="button"
         (mouseover)="onMouseOver()"
         (mouseout)="onMouseOut()"
@@ -17,14 +17,14 @@ import { BorderType } from 'src/app/core/types/border-type';
         (click)="onClick()">
         {{ text }}
         <span
-          class="absolute inset-0 border-2 border-solid rounded-sm"
+          class="absolute inset-0 rounded-sm border-2 border-solid"
           [ngClass]="[getBorderClass(borderClass), ' animate-btn-a1', isHovered ? 'hover:animate-none' : '']">
         </span>
-        <span class="absolute inset-0 bg-primary-foreground rounded-sm z-[-1] transform rotate-45"></span>
+        <span class="absolute inset-0 z-[-1] rotate-45 transform rounded-sm bg-primary-foreground"></span>
       </button>
     </div>
   `,
-    styleUrl: './button-a1.component.scss'
+  styleUrl: './button-a1.component.scss',
 })
 export class ButtonA1Component {
   @Input() text: string = 'More';

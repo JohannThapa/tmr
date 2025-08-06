@@ -6,7 +6,7 @@ import {
   OnDestroy,
   HostListener,
   NgZone,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { gsap } from 'gsap';
 
@@ -14,9 +14,8 @@ import { gsap } from 'gsap';
   selector: 'app-cursor-creature',
   templateUrl: './cursor-creature.component.html',
   styleUrls: ['./cursor-creature.component.scss'],
-  standalone: true
+  standalone: true,
 })
-
 export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
   @ViewChild('creatureWrapper') creatureWrapper!: ElementRef;
   @ViewChild('creature') creatureEl!: ElementRef;
@@ -30,16 +29,16 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
   private lastMove = 0;
   private isAutoMoving = true;
   private particleStates: {
-    currentX: number,
-    currentY: number,
-    targetX: number,
-    targetY: number,
-    delay: number,
-    duration: number,
-    lastUpdate: number
+    currentX: number;
+    currentY: number;
+    targetX: number;
+    targetY: number;
+    delay: number;
+    duration: number;
+    lastUpdate: number;
   }[] = [];
 
-  private center: { x: number, y: number } = { x: 0, y: 0 };
+  private center: { x: number; y: number } = { x: 0, y: 0 };
   private centerDistances: number[] = [];
   private maxDistance: number = 0;
 
@@ -65,13 +64,13 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
   private updateViewport(): void {
     this.viewport = {
       w: window.innerWidth * 0.5,
-      h: window.innerHeight * 0.5
+      h: window.innerHeight * 0.5,
     };
     this.center = { x: this.viewport.w, y: this.viewport.h };
   }
 
   private createParticles(): void {
-    this.particles.forEach(p => p.remove());
+    this.particles.forEach((p) => p.remove());
     this.particles = [];
     this.particleStates = [];
     this.centerDistances = [];
@@ -92,7 +91,7 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
 
       const ratio = distance / this.maxDistance;
       const delay = ratio * 40;
-      const duration = 120 + (ratio * 630);
+      const duration = 120 + ratio * 630;
 
       this.particleStates.push({
         currentX: 0,
@@ -101,33 +100,25 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
         targetY: 0,
         delay,
         duration,
-        lastUpdate: 0
+        lastUpdate: 0,
       });
     }
   }
 
   private setupInitialStyles(): void {
-    this.renderer.setStyle(
-      this.creatureEl.nativeElement,
-      'width',
-      `${this.rows * 10}em`
-    );
+    this.renderer.setStyle(this.creatureEl.nativeElement, 'width', `${this.rows * 10}em`);
 
-    this.renderer.setStyle(
-      this.creatureEl.nativeElement,
-      'height',
-      `${this.rows * 10}em`
-    );
+    this.renderer.setStyle(this.creatureEl.nativeElement, 'height', `${this.rows * 10}em`);
 
     this.particles.forEach((particle, index) => {
       const distance = this.centerDistances[index];
       const ratio = distance / this.maxDistance;
 
-      const scale = 2 + (3 * ratio);
-      const opacity = 1 - (0.9 * ratio);
-      const lightness = 80 - (60 * ratio);
-      const shadow = 8 - (7 * ratio);
-      const zIndex = Math.round((this.rows * this.rows) - (distance * 10));
+      const scale = 2 + 3 * ratio;
+      const opacity = 1 - 0.9 * ratio;
+      const lightness = 80 - 60 * ratio;
+      const shadow = 8 - 7 * ratio;
+      const zIndex = Math.round(this.rows * this.rows - distance * 10);
 
       particle.style.transform = `scale(${scale})`;
       particle.style.opacity = `${opacity}`;
@@ -172,7 +163,9 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
           state.currentX = state.currentX + (state.targetX - state.currentX) * easeProgress;
           state.currentY = state.currentY + (state.targetY - state.currentY) * easeProgress;
 
-          particle.style.transform = `translate(${state.currentX}px, ${state.currentY}px) scale(${particle.style.transform.includes('scale') ? particle.style.transform.split('scale(')[1].split(')')[0] : 1})`;
+          particle.style.transform = `translate(${state.currentX}px, ${state.currentY}px) scale(${
+            particle.style.transform.includes('scale') ? particle.style.transform.split('scale(')[1].split(')')[0] : 1
+          })`;
 
           if (progress === 1) {
             state.lastUpdate = 0;
@@ -231,9 +224,10 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
       particle.style.opacity = '1';
 
       setTimeout(() => {
-        if (particle.parentNode) { // Check if still in DOM
+        if (particle.parentNode) {
+          // Check if still in DOM
           particle.style.transform = originalTransform;
-          particle.style.opacity = `${1 - (0.9 * ratio)}`;
+          particle.style.opacity = `${1 - 0.9 * ratio}`;
         }
       }, 150 + delay);
     });
@@ -263,7 +257,7 @@ export class CursorCreatureComponent implements AfterViewInit, OnDestroy {
       cancelAnimationFrame(this.animationFrameId);
     }
 
-    this.particles.forEach(particle => {
+    this.particles.forEach((particle) => {
       if (particle.parentNode) {
         particle.parentNode.removeChild(particle);
       }

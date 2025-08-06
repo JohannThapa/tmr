@@ -4,18 +4,18 @@
   @apply block;
 }
 .timeline {
-  @apply px-12 py-5 mx-auto max-w-5xl;
+  @apply mx-auto max-w-5xl px-12 py-5;
   ol {
     @apply relative list-none;
     &::before {
-      @apply absolute top-0 left-0 w-[3px] bg-foreground h-full;
+      @apply absolute left-0 top-0 h-full w-[3px] bg-foreground;
       content: '';
     }
 
     li {
       .item-inner {
         padding: 20px 0 20px 180px;
-        @apply text-left mb-0;
+        @apply mb-0 text-left;
       }
       .time-wrapper {
         @apply relative;
@@ -26,13 +26,13 @@
           content: '';
         }
         &::before {
-          @apply top-1/2 left-[-180px] h-[3px] w-0 transform;
+          @apply left-[-180px] top-1/2 h-[3px] w-0 transform;
           transform: translateY(-50%);
           transition: width 0.8s linear;
         }
 
         &::after {
-          @apply left-[-3.75rem] w-[15px] h-[15px] rounded-full;
+          @apply left-[-3.75rem] h-[15px] w-[15px] rounded-full;
           top: calc(50% - 8px);
           transform: scale(0);
           transform-origin: left center;

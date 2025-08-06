@@ -2,16 +2,16 @@
   <div
     *ngFor="let t of tech; let i = index"
     [ngClass]="{ 'pb-5 pt-5': i % 2 === 0 }"
-    class="flex items-center relative justify-start">
-    <div class="border-r-2 border-foreground absolute h-full top-2 z-10">
-      <i class="fas fa-circle -top-1 -ml-2 absolute"></i>
-      <div class="absolute seccion -ml-8 font-bold italic text-gray-400">
+    class="relative flex items-center justify-start">
+    <div class="absolute top-2 z-10 h-full border-r-2 border-foreground">
+      <i class="fas fa-circle absolute -top-1 -ml-2"></i>
+      <div class="seccion absolute -ml-8 font-bold italic text-gray-400">
         {{ t.category }}
       </div>
     </div>
 
-    <div class="ml-6 pt-5 grid grid-cols-4 md:grid-cols-3 xl:grid-cols-4 gap-4">
-      <div *ngFor="let item of t.items" class="flex mb-4 space-x-16">
+    <div class="ml-6 grid grid-cols-4 gap-4 pt-5 md:grid-cols-3 xl:grid-cols-4">
+      <div *ngFor="let item of t.items" class="mb-4 flex space-x-16">
         <svg-icon [src]="item.logo || ''" [svgClass]="'h-12 w-12 mb-2 text-foreground'"></svg-icon>
       </div>
     </div>

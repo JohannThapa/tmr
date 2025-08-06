@@ -4,7 +4,7 @@
     <ul #slider class="slider">
       <li *ngFor="let slide of slides" class="item" [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }">
         <div class="content">
-          <div class="backdrop-blur-lg bg-white/30 p-6">
+          <div class="bg-white/30 p-6 backdrop-blur-lg">
             <h2 class="title text-shadow-light-shadow-primary">{{ slide.title }}</h2>
             <p class="description text-shadow-lg">{{ slide.description }}</p>
           </div>
@@ -19,14 +19,14 @@
         </div>
       </li>
     </ul>
-    <nav class="nav absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50 select-none">
+    <nav class="nav absolute bottom-8 left-1/2 z-50 -translate-x-1/2 transform select-none">
       <button
-        class="btn ripple prev bg-primary bg-opacity-50 text-primary-foreground p-3 rounded-full cursor-pointer hover:bg-opacity-30"
+        class="btn ripple prev cursor-pointer rounded-full bg-primary bg-opacity-50 p-3 text-primary-foreground hover:bg-opacity-30"
         (click)="previousSlide()">
         <svg-icon src="assets/icons/heroicons/outline/arrow-left.svg" [svgClass]="'h-5 w-5'"></svg-icon>
       </button>
       <button
-        class="btn ripple next bg-primary bg-opacity-50 text-primary-foreground ml-4 p-3 rounded-full cursor-pointer hover:bg-opacity-30"
+        class="btn ripple next ml-4 cursor-pointer rounded-full bg-primary bg-opacity-50 p-3 text-primary-foreground hover:bg-opacity-30"
         (click)="nextSlide()">
         <svg-icon src="assets/icons/heroicons/outline/arrow-right.svg" [svgClass]="'h-5 w-5'"></svg-icon>
       </button>

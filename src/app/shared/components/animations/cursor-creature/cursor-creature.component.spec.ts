@@ -8,9 +8,8 @@ describe('CursorCreatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CursorCreatureComponent]
-    })
-    .compileComponents();
+      imports: [CursorCreatureComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CursorCreatureComponent);
     component = fixture.componentInstance;

@@ -1,7 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NgClass } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { COLORS } from 'src/app/core/constants/colors';
 import { ThemeService } from 'src/app/core/services/theme.service';
@@ -10,26 +9,32 @@ import { BgtxtPipe } from 'src/app/shared/pipes/bgtxt.pipe';
 
 const BASE_COLOR = COLORS[0].code;
 @Component({
-    selector: 'app-color-menu',
-    imports: [ClickOutsideDirective, NgClass, RouterLink, AngularSvgIconModule, BgtxtPipe],
-    templateUrl: './color-menu.component.html',
-    styleUrl: './color-menu.component.scss',
-    animations: [
-        trigger('openClose', [
-            state('open', style({
-                opacity: 1,
-                transform: 'translateY(0)',
-                visibility: 'visible',
-            })),
-            state('closed', style({
-                opacity: 0,
-                transform: 'translateY(-20px)',
-                visibility: 'hidden',
-            })),
-            transition('open => closed', [animate('0.2s')]),
-            transition('closed => open', [animate('0.2s')]),
-        ]),
-    ]
+  selector: 'app-color-menu',
+  imports: [ClickOutsideDirective, NgClass, AngularSvgIconModule, BgtxtPipe],
+  templateUrl: './color-menu.component.html',
+  styleUrl: './color-menu.component.scss',
+  animations: [
+    trigger('openClose', [
+      state(
+        'open',
+        style({
+          opacity: 1,
+          transform: 'translateY(0)',
+          visibility: 'visible',
+        }),
+      ),
+      state(
+        'closed',
+        style({
+          opacity: 0,
+          transform: 'translateY(-20px)',
+          visibility: 'hidden',
+        }),
+      ),
+      transition('open => closed', [animate('0.2s')]),
+      transition('closed => open', [animate('0.2s')]),
+    ]),
+  ],
 })
 export class ColorMenuComponent implements AfterViewInit {
   public isOpen = false;

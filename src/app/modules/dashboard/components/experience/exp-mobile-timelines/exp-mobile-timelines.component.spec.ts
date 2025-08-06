@@ -8,9 +8,8 @@ describe('ExpMobileTimelinesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ExpMobileTimelinesComponent]
-    })
-    .compileComponents();
+      imports: [ExpMobileTimelinesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ExpMobileTimelinesComponent);
     component = fixture.componentInstance;

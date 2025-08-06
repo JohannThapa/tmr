@@ -4,11 +4,11 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { BorderType } from 'src/app/core/types/border-type';
 
 @Component({
-    selector: '[tmr-button-a2]',
-    imports: [NgClass, NgFor, RouterLinkActive, RouterLink],
-    template: `
+  selector: '[tmr-button-a2]',
+  imports: [NgClass, NgFor, RouterLinkActive, RouterLink],
+  template: `
     <section class="gooey-section">
-      <svg class="absolute -top-[4000px] -left-[4000px]" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <svg class="absolute -left-[4000px] -top-[4000px]" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="gooey">
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
@@ -23,7 +23,7 @@ import { BorderType } from 'src/app/core/types/border-type';
       </svg>
 
       <button
-        [ngClass]="['px-6 py-3 text-lg rounded-lg relative ', getButtonClasses()]"
+        [ngClass]="['relative rounded-lg px-6 py-3 text-lg ', getButtonClasses()]"
         (mouseover)="onMouseOver()"
         (mouseout)="onMouseOut()"
         (click)="onClick($event)"
@@ -35,15 +35,15 @@ import { BorderType } from 'src/app/core/types/border-type';
         [attr.aria-label]="text"
         id="gooey-button">
         {{ text }}
-        <span class="absolute inset-0 -z-10 bubbles">
+        <span class="bubbles absolute inset-0 -z-10">
           <span
             *ngFor="let bubble of bubbleLen"
             [class.animate-none]="isHovered"
-            [ngClass]="['bubble rounded-full absolute', 'bg-' + bgClass]"></span>
+            [ngClass]="['bubble absolute rounded-full', 'bg-' + bgClass]"></span>
         </span>
       </button>
     </section>
-  `
+  `,
 })
 export class ButtonA2Component {
   @Input() text: string = 'More';

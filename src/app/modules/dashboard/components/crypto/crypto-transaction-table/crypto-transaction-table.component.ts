@@ -6,9 +6,9 @@ import { CryptoTransactionTableItemComponent } from '../crypto-transaction-table
 import { ICrypto } from '../../../models/crypto';
 
 @Component({
-    selector: '[tmr-crypto-transaction-table]',
-    templateUrl: './crypto-transaction-table.component.html',
-    imports: [CommonModule, NgFor, SimpleTableLoaderComponent, CryptoTransactionTableItemComponent]
+  selector: '[tmr-crypto-transaction-table]',
+  templateUrl: './crypto-transaction-table.component.html',
+  imports: [CommonModule, NgFor, SimpleTableLoaderComponent, CryptoTransactionTableItemComponent],
 })
 export class CryptoTransactionTableComponent {
   public currencies: ICrypto[] = [];

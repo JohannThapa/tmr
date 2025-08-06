@@ -10,17 +10,17 @@ import { TableActionComponent } from './components/table-action/table-action.com
 import { toast } from 'ngx-sonner';
 
 @Component({
-    selector: 'app-table',
-    imports: [
-        AngularSvgIconModule,
-        FormsModule,
-        TableHeaderComponent,
-        TableFooterComponent,
-        TableRowComponent,
-        TableActionComponent,
-    ],
-    templateUrl: './table.component.html',
-    styleUrl: './table.component.scss'
+  selector: 'app-table',
+  imports: [
+    AngularSvgIconModule,
+    FormsModule,
+    TableHeaderComponent,
+    TableFooterComponent,
+    TableRowComponent,
+    TableActionComponent,
+  ],
+  templateUrl: './table.component.html',
+  styleUrl: './table.component.scss',
 })
 export class TableComponent {
   users = signal<User[]>([]);
