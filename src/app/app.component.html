@@ -1,5 +1,11 @@
-<div>
-  <router-outlet></router-outlet>
-  <app-responsive-helper></app-responsive-helper>
-  <ngx-sonner-toaster [theme]="themeService.isDark ? 'dark' : 'light'" />
-</div>
+<ng-container *ngIf="!isLoading(); else app">
+  <tmr-chip-loader></tmr-chip-loader>
+</ng-container>
+
+<ng-template #app>
+  <div>
+    <router-outlet></router-outlet>
+    <app-responsive-helper></app-responsive-helper>
+    <ngx-sonner-toaster [theme]="themeService.isDark ? 'dark' : 'light'" />
+  </div>
+</ng-template>
